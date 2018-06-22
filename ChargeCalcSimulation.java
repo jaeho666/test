@@ -15,7 +15,7 @@ import com.nkia.xeus.util.DateUtil;
  * <p> ��ݰ��� ��ǥ���� ��ݰ��
  * 
  */  
-public class ChargeCalcSimulation implements AccountInterface { 
+public class ChargeCalcSimulation implements AccountInterface {
 	
 	NNPLogger log = NNPLogger.getLogger(ChargeCalcSimulation.class);
 	

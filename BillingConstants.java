@@ -5,7 +5,7 @@ package com.nkia.xeus.service.billing.charge;
  */
 public interface BillingConstants {
 	/**
-	 * commit ���ذ��� 
+	 * commit ���ذ���
 	 * */
 	int COMMIT_CNT = 1000; //TRANSACTION ó����  COMMIT ���� �Ǽ�
 	/**

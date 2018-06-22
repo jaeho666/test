@@ -2,7 +2,7 @@ package com.nkia.xeus.entity.billing.charge;
 
 import java.util.List;
 
-public class BillChargeSimulationVO { 
+public class BillChargeSimulationVO {
 	public String cntrCd;  //�����ڵ�   //�ʼ�
 	public String vtrlCd; 	//����ȭ�ڵ�  //�ʼ�
 	public String afltCd; 	//���� �ڵ� //�ʼ�
