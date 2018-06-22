@@ -2,195 +2,195 @@ package com.nkia.xeus.entity.billing.charge;
 
 import java.util.List;
 
-public class BillChargeSimulationVO {
-	public String cntrCd;  //¼¾ÅÍÄÚµå   //ÇÊ¼ö
-	public String vtrlCd; 	//°¡»óÈ­ÄÚµå  //ÇÊ¼ö
-	public String afltCd; 	//°ü°è»ç ÄÚµå //ÇÊ¼ö
-	public String osCd; 	//osCd  	 //ÇÊ¼ö
+public class BillChargeSimulationVO { 
+	public String cntrCd;  //ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½   //ï¿½Ê¼ï¿½
+	public String vtrlCd; 	//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½  //ï¿½Ê¼ï¿½
+	public String afltCd; 	//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ //ï¿½Ê¼ï¿½
+	public String osCd; 	//osCd  	 //ï¿½Ê¼ï¿½
 	
 	
-	public double 	coreCnt; 		//°øÅë(ÅëÇÕÀÎÇÁ¶ó/DR) core °³¼ö  -- SW¶óÀÌ¼¾½º °¡°Ý Á¶È¸½Ã´Â ÇÊ¼ö
-	public long 	cpuCnt; 		//°øÅë(ÅëÇÕÀÎÇÁ¶ó/DR) CPU °³¼ö(default : 2)   -- SW¶óÀÌ¼¾½º °¡°Ý Á¶È¸½Ã´Â ÇÊ¼ö 
-	public double	memSz; 			//°øÅë(ÅëÇÕÀÎÇÁ¶ó/DR) memory »çÀÌÁî
+	public double 	coreCnt; 		//ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/DR) core ï¿½ï¿½ï¿½ï¿½  -- SWï¿½ï¿½ï¿½Ì¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ï¿½Ã´ï¿½ ï¿½Ê¼ï¿½
+	public long 	cpuCnt; 		//ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/DR) CPU ï¿½ï¿½ï¿½ï¿½(default : 2)   -- SWï¿½ï¿½ï¿½Ì¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ï¿½Ã´ï¿½ ï¿½Ê¼ï¿½ 
+	public double	memSz; 			//ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/DR) memory ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
-	public long 	osLocDskSz; 	//ÅëÇÕÀÎÇÁ¶ó LOCAL µð½ºÅ© OS¿ë µð½ºÅ©
-	public long 	dataLocDskSz; 	//ÅëÇÕÀÎÇÁ¶ó LOCAL µð½ºÅ© DATA ¿ë µð½ºÅ©
-	public long 	osDskSz;		//ÅëÇÕÀÎÇÁ¶ó VNX OS µð½ºÅ©         		
-	public long 	dataDskSz;		//ÅëÇÕÀÎÇÁ¶ó VNX DATA µð½ºÅ© 
-	public long 	osV7000Sz;		//ÅëÇÕÀÎÇÁ¶ó V7000 OS µð½ºÅ© 
-	public long 	dataV7000Sz;	//ÅëÇÕÀÎÇÁ¶ó V7000 DATA µð½ºÅ©
-	public long 	osVmaxSz;		//ÅëÇÕÀÎÇÁ¶ó VMAX OS µð½ºÅ©
-	public long 	dataVmaxSz;		//ÅëÇÕÀÎÇÁ¶ó VMAX DAT µð½ºÅ©
-	public boolean isHa;			//ÅëÇÕÀÎÇÁ¶ó HA ¼­ºñ½º 	
+	public long 	osLocDskSz; 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ LOCAL ï¿½ï¿½Å© OSï¿½ï¿½ ï¿½ï¿½Å©
+	public long 	dataLocDskSz; 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ LOCAL ï¿½ï¿½Å© DATA ï¿½ï¿½ ï¿½ï¿½Å©
+	public long 	osDskSz;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ VNX OS ï¿½ï¿½Å©         		
+	public long 	dataDskSz;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ VNX DATA ï¿½ï¿½Å© 
+	public long 	osV7000Sz;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ V7000 OS ï¿½ï¿½Å© 
+	public long 	dataV7000Sz;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ V7000 DATA ï¿½ï¿½Å©
+	public long 	osVmaxSz;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ VMAX OS ï¿½ï¿½Å©
+	public long 	dataVmaxSz;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ VMAX DAT ï¿½ï¿½Å©
+	public boolean isHa;			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ HA ï¿½ï¿½ï¿½ï¿½ 	
 	
-	public long 	osEioSz  ;  	//DR  OS µð½ºÅ© »çÀÌÁî
-	public long 	unixDiskSz; 	//DR  UNIX ¿ë µ¥ÀÌÅÍ disk - VMAX
-	public long 	vCloudDiskSz; 	//DR  X86¿ë µ¥ÀÌÅÍ disk - VNX
-	public long 	exaDiskSz; 		//°øÅë(ÅëÇÕÀÎÇÁ¶ó/DR) exa disk  »çÀÌÁî  
-	public long 	pubNasSz; 		//DR °ø¿ëNAS »çÀÌÁî
-	public long 	realTimeSz; 	//DR ½Ç½Ã°£º¹Á¦»çÀÌÁî
-	public long 	symantecBackupSz;	//DR ¼Ò»ê»çÀÌÁî
+	public long 	osEioSz  ;  	//DR  OS ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	public long 	unixDiskSz; 	//DR  UNIX ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ disk - VMAX
+	public long 	vCloudDiskSz; 	//DR  X86ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ disk - VNX
+	public long 	exaDiskSz; 		//ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/DR) exa disk  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
+	public long 	pubNasSz; 		//DR ï¿½ï¿½ï¿½NAS ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	public long 	realTimeSz; 	//DR ï¿½Ç½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	public long 	symantecBackupSz;	//DR ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
-	public boolean isTcpIpOs;  	//DR ¼¾ÅÍ°£ È¸¼± ½Ç½Ã°£DR ´ë»ó
-	public long 	tcpIpNasSz;  	//DR ¼¾ÅÍ°£ È¸¼± NAS º¹Á¦
-	public long 	tcpIpAdgSz;  	//DR ¼¾ÅÍ°£ È¸¼± ADG 
-	public long 	tcpIpArkSz;  	//DR ¼¾ÅÍ°£ È¸¼± ARK\
-	public long 	tcpIpFcSz;  	//DR ¼¾ÅÍ°£ È¸¼± ½Ç½Ã°£º¹Á¦ -FC
-	public boolean isTcpIpInternet;//DR ¼¾ÅÍ°£ È¸¼± ÀÎÅÍ³Ý 
-	public long 	tcpIpBackupSz; 	//DR ¼¾ÅÍ°£ È¸¼± ¼Ò»ê
+	public boolean isTcpIpOs;  	//DR ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ ï¿½Ç½Ã°ï¿½DR ï¿½ï¿½ï¿½
+	public long 	tcpIpNasSz;  	//DR ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ NAS ï¿½ï¿½ï¿½ï¿½
+	public long 	tcpIpAdgSz;  	//DR ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ ADG 
+	public long 	tcpIpArkSz;  	//DR ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ ARK\
+	public long 	tcpIpFcSz;  	//DR ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ ï¿½Ç½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½ -FC
+	public boolean isTcpIpInternet;//DR ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½Í³ï¿½ 
+	public long 	tcpIpBackupSz; 	//DR ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ ï¿½Ò»ï¿½
 	
-	public boolean isNwNetwork; 	//DR °ø¿ë³×Æ®¿öÅ© ³×Æ®¿öÅ©
-	public boolean isNwSecurity; 	//DR °ø¿ë³×Æ®¿öÅ©  º¸¾È
-	public boolean isNwSan; 		//DR °ø¿ë³×Æ®¿öÅ© À¯Áö¿î¿µ
+	public boolean isNwNetwork; 	//DR ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½Å© ï¿½ï¿½Æ®ï¿½ï¿½Å©
+	public boolean isNwSecurity; 	//DR ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½Å©  ï¿½ï¿½ï¿½ï¿½
+	public boolean isNwSan; 		//DR ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ï¿½î¿µ
 	
-	public long 	nutanixOsDskSz;		//ÅëÇÕÀÎÇÁ¶ó/DR Nutanix OS µð½ºÅ©         		
-	public long 	nutanixDataDskSz;		//ÅëÇÕÀÎÇÁ¶ó/DR Nutanix DATA µð½ºÅ©
+	public long 	nutanixOsDskSz;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/DR Nutanix OS ï¿½ï¿½Å©         		
+	public long 	nutanixDataDskSz;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/DR Nutanix DATA ï¿½ï¿½Å©
 	
-	public List<ActSvcUseDtlVO> swDtl;  //°øÅë(ÅëÇÕÀÎÇÁ¶ó/DR) optionÄÚµå¸¸ ¼ÂÆÃÇÏ¸é µË´Ï´Ù.  mmExcptAmt¿¡ ¿ù¿¹»ó±Ý¾× ¼ÂÆÃ 
+	public List<ActSvcUseDtlVO> swDtl;  //ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/DR) optionï¿½Úµå¸¸ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½Ë´Ï´ï¿½.  mmExcptAmtï¿½ï¿½ ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½ï¿½ï¿½ 
 	
-	// ¸®ÅÏ°ª Á¤¸®
-	//ÇØ´ç ¼­ºñ½º °¡°Ý
-	public long 	cpuPrice;		//CPU °¡°Ý	
-	public long 	cpuUnitPrice; 	//CPU ´Ü°¡
-	public String 	cpuErrMsg;		//¿¡·¯ ¸Þ¼¼Áö
+	// ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½
+	//ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public long 	cpuPrice;		//CPU ï¿½ï¿½ï¿½ï¿½	
+	public long 	cpuUnitPrice; 	//CPU ï¿½Ü°ï¿½
+	public String 	cpuErrMsg;		//ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
 	
-	public long 	memPrice;		//¸Þ¸ð¸® °¡°Ý 
-	public long 	memUnitPrice;	//¸Þ¸ð¸® ´Ü°¡
-	public String 	memErrMsg;		//¿¡·¯ ¸Þ¼¼Áö
+	public long 	memPrice;		//ï¿½Þ¸ï¿½ ï¿½ï¿½ï¿½ï¿½ 
+	public long 	memUnitPrice;	//ï¿½Þ¸ï¿½ ï¿½Ü°ï¿½
+	public String 	memErrMsg;		//ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
 	
-	public long 	osLocDskPrice;		//ÅëÇÕÀÎÇÁ¶ó LOCAL µð½ºÅ© OS¿ë µð½ºÅ© °¡°Ý
-	public long 	osLocDskUnitPrice;	//ÅëÇÕÀÎÇÁ¶ó LOCAL µð½ºÅ© OS¿ë µð½ºÅ© ´Ü°¡
-	public long 	osLocDskValUnit;	//ÅëÇÕÀÎÇÁ¶ó LOCAL µð½ºÅ© OS¿ë µð½ºÅ© °ú±Ý ´ÜÀ§	
-	public String 	osLocDskErrMsg; 	//ÅëÇÕÀÎÇÁ¶ó LOCAL µð½ºÅ© OS¿ë µð½ºÅ© ¿¡·¯¸Þ¼¼Áö	
+	public long 	osLocDskPrice;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ LOCAL ï¿½ï¿½Å© OSï¿½ï¿½ ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½
+	public long 	osLocDskUnitPrice;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ LOCAL ï¿½ï¿½Å© OSï¿½ï¿½ ï¿½ï¿½Å© ï¿½Ü°ï¿½
+	public long 	osLocDskValUnit;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ LOCAL ï¿½ï¿½Å© OSï¿½ï¿½ ï¿½ï¿½Å© ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	
+	public String 	osLocDskErrMsg; 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ LOCAL ï¿½ï¿½Å© OSï¿½ï¿½ ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½	
 	
-	public long 	dataLocDskPrice;	//ÅëÇÕÀÎÇÁ¶ó LOCAL µð½ºÅ© µ¥ÀÌÅÍ¿ë µð½ºÅ© °¡°Ý
-	public long 	dataLocDskUnitPrice;//ÅëÇÕÀÎÇÁ¶ó LOCAL µð½ºÅ© µ¥ÀÌÅÍ¿ë µð½ºÅ© ´Ü°¡
-	public long 	dataLocDskValUnit;//ÅëÇÕÀÎÇÁ¶ó LOCAL µð½ºÅ© µ¥ÀÌÅÍ¿ë µð½ºÅ© °ú±Ý´ÜÀ§
-	public String 	dataLocDskErrMsg; 	//ÅëÇÕÀÎÇÁ¶ó LOCAL µð½ºÅ© µ¥ÀÌÅÍ¿ë µð½ºÅ© ¿¡·¯¸Þ¼¼Áö
+	public long 	dataLocDskPrice;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ LOCAL ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½
+	public long 	dataLocDskUnitPrice;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ LOCAL ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ ï¿½ï¿½Å© ï¿½Ü°ï¿½
+	public long 	dataLocDskValUnit;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ LOCAL ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ ï¿½ï¿½Å© ï¿½ï¿½Ý´ï¿½ï¿½ï¿½
+	public String 	dataLocDskErrMsg; 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ LOCAL ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	
 	
-	public long 	osDskPrice;			//ÅëÇÕÀÎÇÁ¶ó VNX OS µð½ºÅ© °¡°Ý      		
-	public long 	osDskUnitPrice;		//ÅëÇÕÀÎÇÁ¶ó VNX OS µð½ºÅ© ´Ü°¡
-	public long 	osDskValUnit;		//ÅëÇÕÀÎÇÁ¶ó VNX OS µð½ºÅ© °ú±Ý ´ÜÀ§
-	public String 	osDskErrMsg;		//ÅëÇÕÀÎÇÁ¶ó VNX OS µð½ºÅ© ¿¡·¯¸Þ¼¼Áö
+	public long 	osDskPrice;			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ VNX OS ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½      		
+	public long 	osDskUnitPrice;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ VNX OS ï¿½ï¿½Å© ï¿½Ü°ï¿½
+	public long 	osDskValUnit;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ VNX OS ï¿½ï¿½Å© ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public String 	osDskErrMsg;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ VNX OS ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	
-	public long 	dataDskPrice;		//ÅëÇÕÀÎÇÁ¶ó VNX DATA µð½ºÅ© °¡°Ý
-	public long 	dataDskUnitPrice;	//ÅëÇÕÀÎÇÁ¶ó VNX DATA µð½ºÅ© ´Ü°¡
-	public long 	dataDskValUnit;		//ÅëÇÕÀÎÇÁ¶ó VNX DATA µð½ºÅ© °ú±Ý ´ÜÀ§
-	public String 	dataDskErrMsg;		//ÅëÇÕÀÎÇÁ¶ó VNX DATA µð½ºÅ© ¿¡·¯¸Þ¼¼Áö
+	public long 	dataDskPrice;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ VNX DATA ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½
+	public long 	dataDskUnitPrice;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ VNX DATA ï¿½ï¿½Å© ï¿½Ü°ï¿½
+	public long 	dataDskValUnit;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ VNX DATA ï¿½ï¿½Å© ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public String 	dataDskErrMsg;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ VNX DATA ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	
-	public long 	osV7000Price;		//ÅëÇÕÀÎÇÁ¶ó V7000 OS µð½ºÅ© °¡°Ý 
-	public long 	osV7000UnitPrice;	//ÅëÇÕÀÎÇÁ¶ó V7000 OS µð½ºÅ© ´Ü°¡
-	public long 	osV7000ValUnit;		//ÅëÇÕÀÎÇÁ¶ó V7000 OS µð½ºÅ© °ú±Ý ´ÜÀ§
-	public String 	osV7000ErrMsg;		//ÅëÇÕÀÎÇÁ¶ó V7000 OS µð½ºÅ© ¿¡·¯¸Þ¼¼Áö
+	public long 	osV7000Price;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ V7000 OS ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ 
+	public long 	osV7000UnitPrice;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ V7000 OS ï¿½ï¿½Å© ï¿½Ü°ï¿½
+	public long 	osV7000ValUnit;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ V7000 OS ï¿½ï¿½Å© ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public String 	osV7000ErrMsg;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ V7000 OS ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	
-	public long 	dataV7000Price;		//ÅëÇÕÀÎÇÁ¶ó V7000 DATA µð½ºÅ© °¡°Ý 
-	public long 	dataV7000UnitPrice;	//ÅëÇÕÀÎÇÁ¶ó V7000 DATA µð½ºÅ© ´Ü°¡ 
-	public long 	dataV7000ValUnit;	//ÅëÇÕÀÎÇÁ¶ó V7000 DATA µð½ºÅ© °ú±Ý ´ÜÀ§
-	public String 	dataV7000ErrMsg;	//ÅëÇÕÀÎÇÁ¶ó V7000 DATA µð½ºÅ© ¿¡·¯¸Þ¼¼Áö 
+	public long 	dataV7000Price;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ V7000 DATA ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ 
+	public long 	dataV7000UnitPrice;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ V7000 DATA ï¿½ï¿½Å© ï¿½Ü°ï¿½ 
+	public long 	dataV7000ValUnit;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ V7000 DATA ï¿½ï¿½Å© ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public String 	dataV7000ErrMsg;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ V7000 DATA ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½ 
 	
-	public long 	osVmaxPrice;		//ÅëÇÕÀÎÇÁ¶ó VMAX OS µð½ºÅ© °¡°Ý
-	public long 	osVmaxUnitPrice;	//ÅëÇÕÀÎÇÁ¶ó VMAX OS µð½ºÅ© ´Ü°¡
-	public long 	osVmaxValUnit;		//ÅëÇÕÀÎÇÁ¶ó VMAX OS µð½ºÅ© °ú±Ý ´ÜÀ§
-	public String 	osVmaxErrMsg;		//ÅëÇÕÀÎÇÁ¶ó VMAX OS µð½ºÅ© ¿¡·¯¸Þ¼¼Áö
+	public long 	osVmaxPrice;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ VMAX OS ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½
+	public long 	osVmaxUnitPrice;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ VMAX OS ï¿½ï¿½Å© ï¿½Ü°ï¿½
+	public long 	osVmaxValUnit;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ VMAX OS ï¿½ï¿½Å© ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public String 	osVmaxErrMsg;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ VMAX OS ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	
-	public long 	dataVmaxPrice;		//ÅëÇÕÀÎÇÁ¶ó VMAX DATA µð½ºÅ© °¡°Ý
-	public long 	dataVmaxUnitPrice;	//ÅëÇÕÀÎÇÁ¶ó VMAX DATA µð½ºÅ© ´Ü°¡
-	public long 	dataVmaxValUnit;	//ÅëÇÕÀÎÇÁ¶ó VMAX DATA µð½ºÅ© °ú±Ý ´ÜÀ§
-	public String 	dataVmaxErrMsg;		//ÅëÇÕÀÎÇÁ¶ó VMAX DATA µð½ºÅ© ¿¡·¯¸Þ¼¼Áö
+	public long 	dataVmaxPrice;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ VMAX DATA ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½
+	public long 	dataVmaxUnitPrice;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ VMAX DATA ï¿½ï¿½Å© ï¿½Ü°ï¿½
+	public long 	dataVmaxValUnit;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ VMAX DATA ï¿½ï¿½Å© ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public String 	dataVmaxErrMsg;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ VMAX DATA ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	
-	public long 	haPrice;			//ÅëÇÕÀÎÇÁ¶ó HA ¼­ºñ½º °¡°Ý 
-	public long 	haUnitPrice;		//ÅëÇÕÀÎÇÁ¶ó HA ¼­ºñ½º ´Ü°¡
-	public String 	haErrMsg;			//ÅëÇÕÀÎÇÁ¶ó HA ¼­ºñ½º ¿¡·¯¸Þ¼¼Áö
+	public long 	haPrice;			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ HA ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
+	public long 	haUnitPrice;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ HA ï¿½ï¿½ï¿½ï¿½ ï¿½Ü°ï¿½
+	public String 	haErrMsg;			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ HA ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	
-	public long 	dataDiskTot;		//µð½ºÅ© ÃÑ ¿ë·®
+	public long 	dataDiskTot;		//ï¿½ï¿½Å© ï¿½ï¿½ ï¿½ë·®
 	
-	public long		osEioPrice;			//DR OS µð½ºÅ© °¡°Ý
-	public long 	osEioUnitPrice;		//DR OS µð½ºÅ© ´Ü°¡
-	public long 	osEioValUnit;		//DR OS µð½ºÅ© °ú±Ý ´ÜÀ§
-	public String 	osEioErrMsg; 		//DR OS µð½ºÅ© ¿¡·¯¸Þ¼¼Áö
+	public long		osEioPrice;			//DR OS ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½
+	public long 	osEioUnitPrice;		//DR OS ï¿½ï¿½Å© ï¿½Ü°ï¿½
+	public long 	osEioValUnit;		//DR OS ï¿½ï¿½Å© ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public String 	osEioErrMsg; 		//DR OS ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	
-	public long		unixDiskPrice;		//DR UNIX ¿ë µ¥ÀÌÅÍ µð½ºÅ©(VMAX) °¡°Ý	
-	public long 	unixDiskUnitPrice;	//DR UNIX ¿ë µ¥ÀÌÅÍ µð½ºÅ©(VMAX) ´Ü°¡ 
-	public long 	unixDiskValUnit;	//DR UNIX ¿ë µ¥ÀÌÅÍ µð½ºÅ©(VMAX) °ú±Ý ´ÜÀ§ 
-	public String 	unixDiskErrMsg; 	//DR UNIX ¿ë µ¥ÀÌÅÍ µð½ºÅ©(VMAX) ¿¡·¯¸Þ¼¼Áö
+	public long		unixDiskPrice;		//DR UNIX ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©(VMAX) ï¿½ï¿½ï¿½ï¿½	
+	public long 	unixDiskUnitPrice;	//DR UNIX ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©(VMAX) ï¿½Ü°ï¿½ 
+	public long 	unixDiskValUnit;	//DR UNIX ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©(VMAX) ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
+	public String 	unixDiskErrMsg; 	//DR UNIX ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©(VMAX) ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	
-	public long		vCloudDiskPrice;	//DR X86¿ë µ¥ÀÌÅÍ µð½ºÅ©(VNX) °¡°Ý	
-	public long 	vCloudDiskUnitPrice;//DR X86¿ë µ¥ÀÌÅÍ µð½ºÅ©(VNX) ´Ü°¡ 
-	public long 	vCloudDiskValUnit;	//DR X86¿ë µ¥ÀÌÅÍ µð½ºÅ©(VNX) °ú±Ý ´ÜÀ§ 
-	public String 	vCloudDiskErrMsg; 	//DR X86¿ë µ¥ÀÌÅÍ µð½ºÅ©(VNX) ¿¡·¯¸Þ¼¼Áö
+	public long		vCloudDiskPrice;	//DR X86ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©(VNX) ï¿½ï¿½ï¿½ï¿½	
+	public long 	vCloudDiskUnitPrice;//DR X86ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©(VNX) ï¿½Ü°ï¿½ 
+	public long 	vCloudDiskValUnit;	//DR X86ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©(VNX) ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
+	public String 	vCloudDiskErrMsg; 	//DR X86ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©(VNX) ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	
-	public long 	exaDiskPrice; 		//°øÅë(ÅëÇÕÀÎÇÁ¶ó/DR) exa µð½ºÅ© °¡°Ý
-	public long 	exaDiskUnitPrice;	//°øÅë(ÅëÇÕÀÎÇÁ¶ó/DR) exa µð½ºÅ© ´Ü°¡
-	public long 	exaDiskValUnit;		//°øÅë(ÅëÇÕÀÎÇÁ¶ó/DR) exa µð½ºÅ© °ú±Ý ´ÜÀ§
-	public String 	exaDiskErrMsg; 		//°øÅë(ÅëÇÕÀÎÇÁ¶ó/DR) exa µð½ºÅ© ¿¡·¯¸Þ¼¼Áö
+	public long 	exaDiskPrice; 		//ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/DR) exa ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½
+	public long 	exaDiskUnitPrice;	//ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/DR) exa ï¿½ï¿½Å© ï¿½Ü°ï¿½
+	public long 	exaDiskValUnit;		//ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/DR) exa ï¿½ï¿½Å© ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public String 	exaDiskErrMsg; 		//ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/DR) exa ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	
-	public long 	pubNasPrice;		//DR °ø¿ëNAS °¡°Ý
-	public long 	pubNasUnitPrice;	//DR °ø¿ëNAS ´Ü°¡
-	public String 	pubNasErrMsg;		//DR °ø¿ëNAS ¿¡·¯¸Þ¼¼Áö
+	public long 	pubNasPrice;		//DR ï¿½ï¿½ï¿½NAS ï¿½ï¿½ï¿½ï¿½
+	public long 	pubNasUnitPrice;	//DR ï¿½ï¿½ï¿½NAS ï¿½Ü°ï¿½
+	public String 	pubNasErrMsg;		//DR ï¿½ï¿½ï¿½NAS ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	
-	public long 	realTimePrice;		//DR ½Ç½Ã°£º¹Á¦ °¡°Ý
-	public long 	realTimeUnitPrice;	//DR ½Ç½Ã°£º¹Á¦ ´Ü°¡ 
-	public String 	realTimeErrMsg;		//DR ½Ç½Ã°£º¹Á¦ ¿¡·¯¸Þ¼¼Áö 
+	public long 	realTimePrice;		//DR ï¿½Ç½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public long 	realTimeUnitPrice;	//DR ï¿½Ç½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ü°ï¿½ 
+	public String 	realTimeErrMsg;		//DR ï¿½Ç½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½ 
 	
-	public long 	symantecBackupPrice;	//DR ¼Ò»ê°¡°Ý
-	public long 	symantecBackupUnitPrice;//DR ¼Ò»ê´Ü°¡
-	public String 	symantecBackupErrMsg;	//DR ¼Ò»ê¿¡·¯¸Þ¼¼Áö
+	public long 	symantecBackupPrice;	//DR ï¿½Ò»ê°¡ï¿½ï¿½
+	public long 	symantecBackupUnitPrice;//DR ï¿½Ò»ï¿½Ü°ï¿½
+	public String 	symantecBackupErrMsg;	//DR ï¿½Ò»ê¿¡ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 
-	public long 	tcpIpOsPrice;		//DR ¼¾ÅÍ°£ È¸¼±  ½Ç½Ã°£DR ´ë»ó °¡°Ý
-	public long 	tcpIpOsUnitPrice;	//DR ¼¾ÅÍ°£ È¸¼±  ½Ç½Ã°£DR ´ë»ó ´Ü°¡
-	public String 	tcpIpOsErrMsg;		//DR ¼¾ÅÍ°£ È¸¼±  ½Ç½Ã°£DR ´ë»ó ¿¡·¯¸Þ¼¼Áö
+	public long 	tcpIpOsPrice;		//DR ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½  ï¿½Ç½Ã°ï¿½DR ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public long 	tcpIpOsUnitPrice;	//DR ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½  ï¿½Ç½Ã°ï¿½DR ï¿½ï¿½ï¿½ ï¿½Ü°ï¿½
+	public String 	tcpIpOsErrMsg;		//DR ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½  ï¿½Ç½Ã°ï¿½DR ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	
-	public long 	tcpIpNasPrice;		//DR ¼¾ÅÍ°£ È¸¼± NAS º¹Á¦ °¡°Ý
-	public long 	tcpIpNasUnitPrice;	//DR ¼¾ÅÍ°£ È¸¼± NAS º¹Á¦ ´Ü°¡
-	public String 	tcpIpNasErrMsg;		//DR ¼¾ÅÍ°£ È¸¼± NAS º¹Á¦ ¿¡·¯¸Þ¼¼Áö
+	public long 	tcpIpNasPrice;		//DR ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ NAS ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public long 	tcpIpNasUnitPrice;	//DR ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ NAS ï¿½ï¿½ï¿½ï¿½ ï¿½Ü°ï¿½
+	public String 	tcpIpNasErrMsg;		//DR ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ NAS ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	
-	public long 	tcpIpAdgPrice;		//DR ¼¾ÅÍ°£ È¸¼± ADG °¡°Ý	
-	public long 	tcpIpAdgUnitPrice;	//DR ¼¾ÅÍ°£ È¸¼± ADG ´Ü°¡
-	public String 	tcpIpAdgErrMsg;		//DR ¼¾ÅÍ°£ È¸¼± ADG ¿¡·¯¸Þ¼¼Áö
+	public long 	tcpIpAdgPrice;		//DR ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ ADG ï¿½ï¿½ï¿½ï¿½	
+	public long 	tcpIpAdgUnitPrice;	//DR ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ ADG ï¿½Ü°ï¿½
+	public String 	tcpIpAdgErrMsg;		//DR ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ ADG ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	
-	public long 	tcpIpArkPrice;		//DR ¼¾ÅÍ°£ È¸¼± ARK °¡°Ý	
-	public long 	tcpIpArkUnitPrice;	//DR ¼¾ÅÍ°£ È¸¼± ARK ´Ü°¡
-	public String 	tcpIpArkErrMsg;		//DR ¼¾ÅÍ°£ È¸¼± ARK ¿¡·¯¸Þ¼¼Áö
+	public long 	tcpIpArkPrice;		//DR ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ ARK ï¿½ï¿½ï¿½ï¿½	
+	public long 	tcpIpArkUnitPrice;	//DR ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ ARK ï¿½Ü°ï¿½
+	public String 	tcpIpArkErrMsg;		//DR ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ ARK ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	
-	public long 	tcpIpFcPrice;		//DR ¼¾ÅÍ°£ È¸¼± -½Ç½Ã°£º¹Á¦ °¡°Ý
-	public long 	tcpIpFcUnitPrice;   //DR ¼¾ÅÍ°£ È¸¼± -½Ç½Ã°£º¹Á¦ ´Ü°¡
-	public String 	tcpIpFcErrMsg;		//DR ¼¾ÅÍ°£ È¸¼± -½Ç½Ã°£º¹Á¦ ¿¡·¯¸Þ¼¼Áö 
-	
-	
-	public long 	tcpIpInternetPrice;		//DR ¼¾ÅÍ°£ È¸¼±ÀÎÅÍ³Ý °¡°Ý 
-	public long 	tcpIpInternetUnitPrice;	//DR ¼¾ÅÍ°£ È¸¼±ÀÎÅÍ³Ý ´Ü°¡
-	public String 	tcpIpInternetErrMsg;	//DR ¼¾ÅÍ°£ È¸¼±ÀÎÅÍ³Ý ¿¡·¯¸Þ¼¼Áö
-	
-	public long 	tcpIpBackupPrice;		//DR ¼¾ÅÍ°£ È¸¼±-¼Ò»ê °¡°Ý
-	public long 	tcpIpBackupUnitPrice;	//DR ¼¾ÅÍ°£ È¸¼±-¼Ò»ê ´Ü°¡
-	public String 	tcpIpBackupErrMsg;		//DR ¼¾ÅÍ°£ È¸¼±-¼Ò»ê ¿¡·¯¸Þ¼¼Áö
+	public long 	tcpIpFcPrice;		//DR ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ -ï¿½Ç½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public long 	tcpIpFcUnitPrice;   //DR ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ -ï¿½Ç½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ü°ï¿½
+	public String 	tcpIpFcErrMsg;		//DR ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ -ï¿½Ç½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½ 
 	
 	
-	public long 	nwNetworkPrice;			//DR °ø¿ë³×Æ®¿öÅ© ³×Æ®¿öÅ© °¡°Ý
-	public long 	nwNetworkUnitPrice;		//DR °ø¿ë³×Æ®¿öÅ© ³×Æ®¿öÅ© ´Ü°¡
-	public String 	nwNetworkErrMsg;		//DR °ø¿ë³×Æ®¿öÅ© ³×Æ®¿öÅ© ¿¡·¯¸Þ¼¼Áö
+	public long 	tcpIpInternetPrice;		//DR ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½Í³ï¿½ ï¿½ï¿½ï¿½ï¿½ 
+	public long 	tcpIpInternetUnitPrice;	//DR ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½Í³ï¿½ ï¿½Ü°ï¿½
+	public String 	tcpIpInternetErrMsg;	//DR ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½Í³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	
-	public long 	nwSecurityPrice;		//DR °ø¿ë³×Æ®¿öÅ© º¸¾È °¡°Ý
-	public long 	nwSecurityUnitPrice;	//DR °ø¿ë³×Æ®¿öÅ© º¸¾È ´Ü°¡
-	public String 	nwSecurityErrMsg;		//DR °ø¿ë³×Æ®¿öÅ© º¸¾È ¿¡·¯¸Þ¼¼Áö
+	public long 	tcpIpBackupPrice;		//DR ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½-ï¿½Ò»ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public long 	tcpIpBackupUnitPrice;	//DR ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½-ï¿½Ò»ï¿½ ï¿½Ü°ï¿½
+	public String 	tcpIpBackupErrMsg;		//DR ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½-ï¿½Ò»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	
-	public long 	nwSanPrice;				//DR °ø¿ë³×Æ®¿öÅ© ³×Æ®¿öÅ©/º¸¾È À¯Áö¿î¿µ °¡°Ý
-	public long 	nwSanUnitPrice;			//DR °ø¿ë³×Æ®¿öÅ© ³×Æ®¿öÅ©/º¸¾È À¯Áö¿î¿µ ´Ü°¡ 
-	public String 	nwSanErrMsg;			//DR °ø¿ë³×Æ®¿öÅ© ³×Æ®¿öÅ©/º¸¾È À¯Áö¿î¿µ ¿¡·¯¸Þ¼¼Áö	
 	
-	public long 	swTotPrice;				//SW ÀüÃ¼°¡°Ý			
-	public long 	totAmt;					//ÀüÃ¼ °¡°Ý
+	public long 	nwNetworkPrice;			//DR ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½Å© ï¿½ï¿½Æ®ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½
+	public long 	nwNetworkUnitPrice;		//DR ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½Å© ï¿½ï¿½Æ®ï¿½ï¿½Å© ï¿½Ü°ï¿½
+	public String 	nwNetworkErrMsg;		//DR ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½Å© ï¿½ï¿½Æ®ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	
-	public long 	nutanixOsDskPrice;		//ÅëÇÕÀÎÇÁ¶ó/DR Nutanix µð½ºÅ© OS¿ë µð½ºÅ© °¡°Ý
-	public long 	nutanixOsDskUnitPrice;	//ÅëÇÕÀÎÇÁ¶ó/DR Nutanix µð½ºÅ© OS¿ë µð½ºÅ© ´Ü°¡
-	public long 	nutanixOsDskValUnit;	//ÅëÇÕÀÎÇÁ¶ó/DR Nutanix µð½ºÅ© OS¿ë µð½ºÅ© °ú±Ý ´ÜÀ§
-	public String 	nutanixOsDskErrMsg; 	//ÅëÇÕÀÎÇÁ¶ó/DR Nutanix µð½ºÅ© OS¿ë µð½ºÅ© ¿¡·¯¸Þ¼¼Áö
+	public long 	nwSecurityPrice;		//DR ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public long 	nwSecurityUnitPrice;	//DR ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ ï¿½Ü°ï¿½
+	public String 	nwSecurityErrMsg;		//DR ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	
-	public long 	nutanixDataDskPrice;	//ÅëÇÕÀÎÇÁ¶ó/DR Nutanix µð½ºÅ© µ¥ÀÌÅÍ¿ë µð½ºÅ© °¡°Ý
-	public long 	nutanixDataDskUnitPrice;//ÅëÇÕÀÎÇÁ¶ó/DR Nutanix µð½ºÅ© µ¥ÀÌÅÍ¿ë µð½ºÅ© ´Ü°¡
-	public long 	nutanixDataDskValUnit;	//ÅëÇÕÀÎÇÁ¶ó/DR Nutanix µð½ºÅ© µ¥ÀÌÅÍ¿ë µð½ºÅ© °ú±Ý ´ÜÀ§
-	public String 	nutanixDataDskErrMsg; 	//ÅëÇÕÀÎÇÁ¶ó/DR Nutanix µð½ºÅ© µ¥ÀÌÅÍ¿ë µð½ºÅ© ¿¡·¯¸Þ¼¼Áö
+	public long 	nwSanPrice;				//DR ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½Å© ï¿½ï¿½Æ®ï¿½ï¿½Å©/ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½î¿µ ï¿½ï¿½ï¿½ï¿½
+	public long 	nwSanUnitPrice;			//DR ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½Å© ï¿½ï¿½Æ®ï¿½ï¿½Å©/ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½î¿µ ï¿½Ü°ï¿½ 
+	public String 	nwSanErrMsg;			//DR ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½Å© ï¿½ï¿½Æ®ï¿½ï¿½Å©/ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½î¿µ ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½	
+	
+	public long 	swTotPrice;				//SW ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½			
+	public long 	totAmt;					//ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½
+	
+	public long 	nutanixOsDskPrice;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/DR Nutanix ï¿½ï¿½Å© OSï¿½ï¿½ ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½
+	public long 	nutanixOsDskUnitPrice;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/DR Nutanix ï¿½ï¿½Å© OSï¿½ï¿½ ï¿½ï¿½Å© ï¿½Ü°ï¿½
+	public long 	nutanixOsDskValUnit;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/DR Nutanix ï¿½ï¿½Å© OSï¿½ï¿½ ï¿½ï¿½Å© ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public String 	nutanixOsDskErrMsg; 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/DR Nutanix ï¿½ï¿½Å© OSï¿½ï¿½ ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
+	
+	public long 	nutanixDataDskPrice;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/DR Nutanix ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½
+	public long 	nutanixDataDskUnitPrice;//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/DR Nutanix ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ ï¿½ï¿½Å© ï¿½Ü°ï¿½
+	public long 	nutanixDataDskValUnit;	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/DR Nutanix ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ ï¿½ï¿½Å© ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public String 	nutanixDataDskErrMsg; 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/DR Nutanix ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	
 	
 	/**

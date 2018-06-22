@@ -12,43 +12,43 @@ import com.nkia.xeus.entity.billing.charge.RateSvcPrcDtlVO;
 import com.nkia.xeus.util.ChargeUtil;
 import com.nkia.xeus.util.DateUtil;
 /**
- * <p> ¿ä±Ý°è»ê±â ÁöÇ¥µéÀÇ ¿ä±Ý°è»ê
+ * <p> ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ý°ï¿½ï¿½
  * 
  */  
-public class ChargeCalcSimulation implements AccountInterface {
+public class ChargeCalcSimulation implements AccountInterface { 
 	
 	NNPLogger log = NNPLogger.getLogger(ChargeCalcSimulation.class);
 	
 	private long monVal;
 	private String chrgYm;
 	  
-	//¿äÀ²
+	//ï¿½ï¿½ï¿½ï¿½
 	private RateSvcRateInterface svcRateService ;
-	//¼­ºñ½ºvoList
+	//ï¿½ï¿½ï¿½ï¿½voList
 	private ActSvcUseDtlVO actSvcUseDtl;
-	//¼­ºñ½ºvoList
+	//ï¿½ï¿½ï¿½ï¿½voList
 	private List<ActSvcUseDtlVO> actSvcUseDtlList = new ArrayList<ActSvcUseDtlVO>();
-	//¿äÀ²vo
+	//ï¿½ï¿½ï¿½ï¿½vo
 	private List<RateSvcPrcDtlVO> rateSvcPrcDtl = new ArrayList<RateSvcPrcDtlVO>();
 	//private HashMap<String,RateSvcPrcDtlVO> rateSvcPrcDtl = new HashMap<String,RateSvcPrcDtlVO>();
 	
-	//¿äÀ²Àû¿ëÀÏÀÚ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	private String stdAplyDt;
 	
 
-	//vmÄÚµå
+	//vmï¿½Úµï¿½
 	private String vmCd;
 	private long svcAmt;
 	private long unitPrice;
 	private long valUnit;
 	
-	//°ú±Ý¸ðµ¨ hashMap
+	//ï¿½ï¿½Ý¸ï¿½ hashMap
 	private HashMap hmAplyMdl = new HashMap();
 	
-	//Á¶Á¤±Ý¾×
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½
 	private long adjAmt;
 
-	//Á¶Á¤±Ý¾×
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½
 	public long getAdjAmt() {
 		return adjAmt;
 	}
@@ -75,8 +75,8 @@ public class ChargeCalcSimulation implements AccountInterface {
 		selectChargeRowData();
 	}
 	/**
-	 * <p>»ç¿ë ¹ÌÅÍ¸µµ¥ÀÌÅÍ Á¶È¸
-	 * @param  ¾øÀ½
+	 * <p>ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸
+	 * @param  ï¿½ï¿½ï¿½ï¿½
 	 * @return void 
 	 * @throws Exception
 	 */
@@ -97,25 +97,25 @@ public class ChargeCalcSimulation implements AccountInterface {
 	}
 	
 	/**
-	 * <p>//ÇÒ´ç·® ¹æ½ÄÀÇ °ú±ÝÀ»°è»êÇÑ´Ù.
-	 * @param long ÀÇ¹Ì¾øÀ½
+	 * <p>//ï¿½Ò´ç·® ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
+	 * @param long ï¿½Ç¹Ì¾ï¿½ï¿½ï¿½
 	 * @return void 
 	 * @throws Exception
 	 */
 	public long calcOfAllocQts() throws Exception{
 		log.info("ChargeSimulationCalcService.calcOfAllocQts start #######################");
-		//´ÜÀ§
+		//ï¿½ï¿½ï¿½ï¿½
 		String strUnit = "";
 		long svcPrice = 0l;
 		long svcCstPrice = 0l;
-		//ÇÑ´ÞÀÏ¶§¿ä±Ý
+		//ï¿½Ñ´ï¿½ï¿½Ï¶ï¿½ï¿½ï¿½ï¿½
 		double  priceOfMonth =0;
 		double cstPriceOfMonth =0;
-		//ÇÒ´ç·® 
+		//ï¿½Ò´ç·® 
 		long lAllocQts = 0l;
 		double doubleQts = 0;
 		
-		//´ÜÀ§´ç °¡°Ý
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		long valByUnit = 0l;
 		
 		HashMap<String, String> svcMap = new HashMap<String, String>();
@@ -129,7 +129,7 @@ public class ChargeCalcSimulation implements AccountInterface {
 		log.info("this.getDoubleQts:"+this.actSvcUseDtl.getDoubleQts());
 		String strAfltCd="";
 		String strAplymodelKey ="";
-		// °ü°è»ç ¿äÀ² Á¸Àç¿©ºÎ Ã¼Å© ( ÆÄ»ý¿äÀ² ¿©ºÎ Ã¼Å©)¤·
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ç¿©ï¿½ï¿½ Ã¼Å© ( ï¿½Ä»ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¼Å©)ï¿½ï¿½
 		strAplymodelKey = this.stdAplyDt +"|"+actSvcUseDtl.getAfltCd();
 		
 		if(!hmAplyMdl.containsKey(strAplymodelKey)){
@@ -138,80 +138,80 @@ public class ChargeCalcSimulation implements AccountInterface {
 		log.info("strAplymodelKey: " + strAplymodelKey + " result-> strAfltCd: "+strAfltCd);
 				
 		try{
-			//ÁöÇ¥ÀÇ °¡°Ý °Ë»ö
+			//ï¿½ï¿½Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½
 			svcMap =  svcRateService.searchSvcPrc(this.stdAplyDt,strAfltCd, actSvcUseDtl.getCntrCd(),  actSvcUseDtl.getTypCd(), actSvcUseDtl.getOptCd(), actSvcUseDtl.getOsCd(), actSvcUseDtl.getVrtlCd());	
 		}catch ( NotFoundUnitPriceException e){
 			throw new NotFoundUnitPriceException (e.getMessage());
 		}
 		
-		//ÇØ´ç¼­ºñ½ºÀÇ °¡°Ý¿äÀ²ÀÌ ¾ø´Â°æ¿ì 
+		//ï¿½Ø´ç¼­ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â°ï¿½ï¿½ 
 		if (svcMap.size() ==0){
-			//throw new Exception("ÇØ´ç ¼­ºñ½ºÀÇ ´Ü°¡ ¿äÀ²ÀÌ ¾ø½À´Ï´Ù.!!");
-			log.info("ÇØ´ç ¼­ºñ½ºÀÇ ´Ü°¡ ¿äÀ²ÀÌ ¾ø½À´Ï´Ù.!!###########");
+			//throw new Exception("ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ü°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.!!");
+			log.info("ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ü°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.!!###########");
 			return 0;
 		} 
-		//°ú±Ý´ÜÀ§ 
+		//ï¿½ï¿½Ý´ï¿½ï¿½ï¿½ 
 		strUnit = svcMap.get("unit");		
 		
-		//´ÜÀ§´ç °ª
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 		valByUnit = Long.parseLong((String)svcMap.get("fromVal"));
 		
-		//¿ù´Ü°¡
+		//ï¿½ï¿½Ü°ï¿½
 		svcPrice = Long.parseLong((String)svcMap.get("prc"));
 		
-		//¿ø°¡
+		//ï¿½ï¿½
 		svcCstPrice = Long.parseLong((String)svcMap.get("costPrc"));
-		//ÇÒ´ç·®
+		//ï¿½Ò´ç·®
 		lAllocQts = this.actSvcUseDtl.getQts();
 		
 		
 		if(BillingConstants.TYP_CD_CPU.equals(this.actSvcUseDtl.getTypCd()) || BillingConstants.TYP_CD_MEMORY.equals(this.actSvcUseDtl.getTypCd())|| BillingConstants.TYP_CD_HA.equals(this.actSvcUseDtl.getTypCd())){
 			doubleQts = actSvcUseDtl.getDoubleQts();
 		}else{
-			//ÇÒ´ç·®
+			//ï¿½Ò´ç·®
 			lAllocQts = actSvcUseDtl.getQts();	
 		}		
-		//OS´ç, OSº°  ¶óÀÌ¼¾½º°¡ ¾Æ´Ñ°æ¿ì
+		//OSï¿½ï¿½, OSï¿½ï¿½  ï¿½ï¿½ï¿½Ì¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Ñ°ï¿½ï¿½
 		if(!"OS".equals(strUnit) && !"SERVER".equals(strUnit)  ){
 			if(BillingConstants.TYP_CD_CPU.equals(this.actSvcUseDtl.getTypCd()) || BillingConstants.TYP_CD_MEMORY.equals(this.actSvcUseDtl.getTypCd())|| BillingConstants.TYP_CD_HA.equals(this.actSvcUseDtl.getTypCd())){
 		
-				//ÇÑ´Þ¿ä±Ý
+				//ï¿½Ñ´Þ¿ï¿½ï¿½
 				priceOfMonth = doubleQts / valByUnit * svcPrice  ; 
-				//ÇÑ´Þ ¿ø°¡
+				//ï¿½Ñ´ï¿½ ï¿½ï¿½
 				cstPriceOfMonth =  doubleQts / valByUnit * svcCstPrice ;
 				
 			}else{
 				
-				//ÇÑ´Þ¿ä±Ý
+				//ï¿½Ñ´Þ¿ï¿½ï¿½
 				priceOfMonth = lAllocQts/ valByUnit * svcPrice;
-				//ÇÑ´Þ ¿ø°¡
+				//ï¿½Ñ´ï¿½ ï¿½ï¿½
 				cstPriceOfMonth = lAllocQts /valByUnit * svcCstPrice ;				
 				
 			}
 		}else{
-			//ÇÑ´Þ¿ä±Ý
+			//ï¿½Ñ´Þ¿ï¿½ï¿½
 			priceOfMonth = svcPrice;
 			cstPriceOfMonth = svcCstPrice;
 		}
 		
 		log.info("CntrCd:"+this.actSvcUseDtl.getCntrCd() + " vrtlCd:"+this.actSvcUseDtl.getVrtlCd() + " osCd:"+this.actSvcUseDtl.getOsCd());
 		log.info("typCd:"+this.actSvcUseDtl.getTypCd() + " optCd:"+this.actSvcUseDtl.getOptCd());
-		log.info("ÇÒ´ç·® : "+lAllocQts + ", ¿ù´Ü°¡/´ÜÀ§´ç °¡°Ý : "+svcPrice + ", ÇÑ´ÞÀÇ ¿ä±Ý : "+priceOfMonth);
-		log.info("ÇÒ´ç·® : "+lAllocQts + ", ¿ù´Ü°¡/´ÜÀ§´ç ¿ø°¡ : "+svcCstPrice + ", ÇÑ´ÞÀÇ ¿ä±Ý : "+cstPriceOfMonth);
+		log.info("ï¿½Ò´ç·® : "+lAllocQts + ", ï¿½ï¿½Ü°ï¿½/ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : "+svcPrice + ", ï¿½Ñ´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ : "+priceOfMonth);
+		log.info("ï¿½Ò´ç·® : "+lAllocQts + ", ï¿½ï¿½Ü°ï¿½/ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ : "+svcCstPrice + ", ï¿½Ñ´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ : "+cstPriceOfMonth);
 		
 		
-		//¿ù¿ä±Ý --½Å¼¼°è I&C
+		//ï¿½ï¿½ï¿½ï¿½ --ï¿½Å¼ï¿½ï¿½ï¿½ I&C
 		if(BillingConstants.AFLT_D_INC.equals(actSvcUseDtl.getAfltCd())){
 			svcAmt = Math.round(cstPriceOfMonth);
-			//´Ü°¡
+			//ï¿½Ü°ï¿½
 			unitPrice = svcCstPrice;
-			//´ÜÀ§´ç °ª
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 			valUnit = valByUnit;
 		}else{
 			svcAmt = Math.round(priceOfMonth);
-			//´Ü°¡
+			//ï¿½Ü°ï¿½
 			unitPrice = svcPrice;
-			//°ú±Ý ´ÜÀ§ 
+			//ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
 			valUnit = valByUnit;
 		}
 		log.info("ChargeSimulationCalcService.calcOfAllocQts end #######################");
@@ -219,9 +219,9 @@ public class ChargeCalcSimulation implements AccountInterface {
 	}
 	
 	/**
-	 * <p>//¿ä±Ý ÀÏÇÒ°è»ê
-	 * @param List<ActSvcUseDtlVO> ¼­ºñ½º»ç¿ë³»¿ª
-	 * @return long chargAmt : ÀÏÇÒ°è»êµÈ ±Ý¾× 
+	 * <p>//ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ò°ï¿½ï¿½
+	 * @param List<ActSvcUseDtlVO> ï¿½ï¿½ï¿½ñ½º»ï¿½ë³»ï¿½ï¿½
+	 * @return long chargAmt : ï¿½ï¿½ï¿½Ò°ï¿½ï¿½ï¿½ ï¿½Ý¾ï¿½ 
 	 * @throws Exception
 	 */
 	public long calcOnDailyBasis(String fromDt, String toDt, long svcPrice)throws Exception{
@@ -253,7 +253,7 @@ public class ChargeCalcSimulation implements AccountInterface {
 				return hmRtn;
 		}
 		log.info("searchSvcPrcByCapcityAndOs end #############################");
-		//log.info("CPU/MEMORY °¡°ÝÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù. ÇØ´ç ¼­¹öÀÇ ¼­ºñ½º ÄÚµå(TYPE_CODE, OPTION_CODE)¿Í  ¼­ºñ½º¿äÀ²À»  È®ÀÎ¹Ù¶ø´Ï´Ù.");
+		//log.info("CPU/MEMORY ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½. ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½(TYPE_CODE, OPTION_CODE)ï¿½ï¿½  ï¿½ï¿½ï¿½ñ½º¿ï¿½ï¿½ï¿½ï¿½ï¿½  È®ï¿½Î¹Ù¶ï¿½Ï´ï¿½.");
 		return hmRtn;
 	}
 	
@@ -297,7 +297,7 @@ public class ChargeCalcSimulation implements AccountInterface {
 				return hmRtn;
 		}
 		log.info("searchSvcPrcByOS end #############################");
-		//log.info("ÇØ´ç ¼­ºñ½ºÀÇ °¡°ÝÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù. ÇØ´ç ¼­¹öÀÇ ¼­ºñ½º ÄÚµå(TYPE_CODE, OPTION_CODE)¿Í  ¼­ºñ½º¿äÀ²À»  È®ÀÎ¹Ù¶ø´Ï´Ù.");
+		//log.info("ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½. ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½(TYPE_CODE, OPTION_CODE)ï¿½ï¿½  ï¿½ï¿½ï¿½ñ½º¿ï¿½ï¿½ï¿½ï¿½ï¿½  È®ï¿½Î¹Ù¶ï¿½Ï´ï¿½.");
 		return hmRtn;
 	}
 

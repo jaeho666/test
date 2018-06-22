@@ -1,108 +1,108 @@
 package com.nkia.xeus.service.billing.charge;
 /**
- * <p> ºô¸µ¿¡¼­ »ç¿ëÇÏ´Â »ó¼ö ¼±¾ð
+ * <p> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
  * 
  */
 public interface BillingConstants {
 	/**
-	 * commit ±âÁØ°³¼ö
+	 * commit ï¿½ï¿½ï¿½Ø°ï¿½ï¿½ï¿½ 
 	 * */
-	int COMMIT_CNT = 1000; //TRANSACTION Ã³¸®½Ã  COMMIT ±âÁØ °Ç¼ö
+	int COMMIT_CNT = 1000; //TRANSACTION Ã³ï¿½ï¿½ï¿½ï¿½  COMMIT ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¼ï¿½
 	/**
-	 * Å¸ÀÔÄÚµå
+	 * Å¸ï¿½ï¿½ï¿½Úµï¿½
 	 * */
 	String TYP_CD_CPU  = "CPU"; 				//CPU
-	String TYP_CD_MEMORY = "MEMORY"; 			//¸Þ¸ð¸®
-	String TYP_CD_DISK = "DISK"; 				//½ºÅä¸®Áö
-	String TYP_CD_DISK_SHARED = "DISK_SHARED"; 	//°øÀ¯µð½ºÅ©
-	String TYP_CD_DISK_COMM = "DISK_COMM"; 		//°øÅëµð½ºÅ©
-	String TYP_CD_HA = "HA"; 					//HA¼­ºñ½º
+	String TYP_CD_MEMORY = "MEMORY"; 			//ï¿½Þ¸ï¿½
+	String TYP_CD_DISK = "DISK"; 				//ï¿½ï¿½ï¿½ä¸®ï¿½ï¿½
+	String TYP_CD_DISK_SHARED = "DISK_SHARED"; 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å©
+	String TYP_CD_DISK_COMM = "DISK_COMM"; 		//ï¿½ï¿½ï¿½ï¿½ï¿½Å©
+	String TYP_CD_HA = "HA"; 					//HAï¿½ï¿½ï¿½ï¿½
 	String TYP_CD_DR = "DR";
-	String TYP_CD_DUPLICATE = "DUPLICATE"; //½Ç½Ã°£ º¹Á¦/ ¼Ò»ê
-	//String TYP_CD_BACKUP = "DUPLICATE";			//½ÃÁ¡¹é¾÷, ¼Ò»ê
-	String TYP_CD_DR_CIRCUIT = "DR_CIRCUIT"; 	//¼¾ÅÍ°£ È¸¼± ¼­ºñ½º
-	String TYP_CD_NAS_SHARED = "NAS_SHARED"; 	// °ø¿ëNAS
-	String TYP_CD_NAS_DEDICATED = "NAS_DEDICATED"; 		//Àü¿ë NAS
-	String TYP_CD_NETWORK_PUBLIC = "NETWORK_PUBLIC";	//°ø¿ë³×Æ®¿öÅ©
-	String TYP_CD_NETWORK_PRIVATE = "NETWORK_PRIVATE"; 	//Àü¿ë³×Æ®¿öÅ© 
-	String TYP_CD_NETWORK_DEPT = "NETWORK_DEPT"; 		//Àü¿ë¼±
+	String TYP_CD_DUPLICATE = "DUPLICATE"; //ï¿½Ç½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½/ ï¿½Ò»ï¿½
+	//String TYP_CD_BACKUP = "DUPLICATE";			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½Ò»ï¿½
+	String TYP_CD_DR_CIRCUIT = "DR_CIRCUIT"; 	//ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	String TYP_CD_NAS_SHARED = "NAS_SHARED"; 	// ï¿½ï¿½ï¿½NAS
+	String TYP_CD_NAS_DEDICATED = "NAS_DEDICATED"; 		//ï¿½ï¿½ï¿½ NAS
+	String TYP_CD_NETWORK_PUBLIC = "NETWORK_PUBLIC";	//ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½Å©
+	String TYP_CD_NETWORK_PRIVATE = "NETWORK_PRIVATE"; 	//ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½Å© 
+	String TYP_CD_NETWORK_DEPT = "NETWORK_DEPT"; 		//ï¿½ï¿½ë¼±
 	String TYP_CD_SOFTWARE = "SOFTWARE";
 	String TYP_CD_STG_DEDICATED = "STG_DEDICATED";
-	String TYP_CD_NAS_SERVER = "NAS_SERVER";			//Àü¿ëNAS - ÀÌ¸¶Æ®
+	String TYP_CD_NAS_SERVER = "NAS_SERVER";			//ï¿½ï¿½ï¿½NAS - ï¿½Ì¸ï¿½Æ®
 		
 	
 	/**
-	 * ¿É¼ÇÄÚµå
+	 * ï¿½É¼ï¿½ï¿½Úµï¿½
 	 **/	
-	String OPT_CD_VCORE= "VCORE"; 					//ÇÒ´ç ¼³Á¤µÈ vCore ¼ö
+	String OPT_CD_VCORE= "VCORE"; 					//ï¿½Ò´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ vCore ï¿½ï¿½
 	String OPT_CD_SOCKET= "SOCKET"; 				//Socket
-	String OPT_CD_ENT_VCORE= "ENT_VCORE";			//½ÇÁ¦ ÇÒ´çµÈ vCore ¼ö
-	String OPT_CD_MIN_VCORE= "MIN_VCORE"; 			//ÃÖ¼Ò ÇÒ´ç ¼³Á¤µÈ vCore ¼ö
-	String OPT_CD_MAX_VCORE= "MAX_VCORE"; 			//ÃÖ´ë ÇÒ´ç ¼³Á¤µÈ vCore ¼ö
-	String OPT_CD_PRVSNG_SIZE= "PRVSNG_SIZE"; 		//Provisioning ÃÑÇÒ´ç·®
-	String OPT_CD_TOTAL_SIZE= "TOTAL_SIZE"; 		//MORY, Disk, NAS µî ÃÑÇÒ´ç·®
+	String OPT_CD_ENT_VCORE= "ENT_VCORE";			//ï¿½ï¿½ï¿½ï¿½ ï¿½Ò´ï¿½ï¿½ vCore ï¿½ï¿½
+	String OPT_CD_MIN_VCORE= "MIN_VCORE"; 			//ï¿½Ö¼ï¿½ ï¿½Ò´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ vCore ï¿½ï¿½
+	String OPT_CD_MAX_VCORE= "MAX_VCORE"; 			//ï¿½Ö´ï¿½ ï¿½Ò´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ vCore ï¿½ï¿½
+	String OPT_CD_PRVSNG_SIZE= "PRVSNG_SIZE"; 		//Provisioning ï¿½ï¿½ï¿½Ò´ç·®
+	String OPT_CD_TOTAL_SIZE= "TOTAL_SIZE"; 		//MORY, Disk, NAS ï¿½ï¿½ ï¿½ï¿½ï¿½Ò´ç·®
 	String OPT_CD_EXT_EXADATA_DISK= "EXT_EXADATA_DISK"; //EXADATA Disk
 	String OPT_CD_EXT_DATA_V7K= "EXT_DATA_V7K"; 	//DATA DISK (V7000)
 	String OPT_CD_EXT_DATA_VMAX= "EXT_DATA_VMAX"; 	//DATA DISK (EMC VMAX)
 	String OPT_CD_EXT_DATA_VNX= "EXT_DATA_VNX"; 	//DATA DISK (EMC VNX)
-	String OPT_CD_INT_DATA_DISK= "INT_DATA_DISK"; 	//³»Àå(·ÎÄÃ) DATA DISK
+	String OPT_CD_INT_DATA_DISK= "INT_DATA_DISK"; 	//ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½) DATA DISK
 	String OPT_CD_EXT_OS_V7K= "EXT_OS_V7K"; 		//OS DISK (V7000)
 	String OPT_CD_EXT_OS_EIO= "EXT_OS_EIO"; 		//OS DISK (EMC ExtreamIO)
 	String OPT_CD_EXT_OS_VMAX= "EXT_OS_VMAX"; 		//OS DISK (EMC VMAX)
 	String OPT_CD_EXT_OS_VNX= "EXT_OS_VNX"; 		//OS DISK (EMC VNX)
-	String OPT_CD_INT_OS_DISK= "INT_OS_DISK"; 		//³»Àå OS DISK
-	String OPT_CD_DISK_SHARED= "DISK_SHARED"; 		//°øÀ¯(Shared) Disk ÃÑÇÒ´ç·®
-	String OPT_CD_DISK_COMM= "DISK_COMM"; 			//°øÅë(Common) Disk ÃÑÇÒ´ç·®
-	String OPT_CD_INT_ARK= "INT_ARK"; 				//INT ARK µð½ºÅ©
+	String OPT_CD_INT_OS_DISK= "INT_OS_DISK"; 		//ï¿½ï¿½ï¿½ï¿½ OS DISK
+	String OPT_CD_DISK_SHARED= "DISK_SHARED"; 		//ï¿½ï¿½ï¿½ï¿½(Shared) Disk ï¿½ï¿½ï¿½Ò´ç·®
+	String OPT_CD_DISK_COMM= "DISK_COMM"; 			//ï¿½ï¿½ï¿½ï¿½(Common) Disk ï¿½ï¿½ï¿½Ò´ç·®
+	String OPT_CD_INT_ARK= "INT_ARK"; 				//INT ARK ï¿½ï¿½Å©
 	
 	String OPT_CD_NTX_OS_DISK= "NTX_OS_DISK"; 				//NUTANIX OS DISK
 	String OPT_CD_NTX_DATA_DISK= "NTX_DATA_DISK"; 				//NUTANIX DATA DISK
 	
 	
-	String OPT_CD_DR_SERVICE= "DR_SERVICE"; 		//DR ¼­ºñ½º
-	String OPT_CD_DR_CENTER= "DR_CENTER"; 			//DR ¼¾ÅÍ
+	String OPT_CD_DR_SERVICE= "DR_SERVICE"; 		//DR ï¿½ï¿½ï¿½ï¿½
+	String OPT_CD_DR_CENTER= "DR_CENTER"; 			//DR ï¿½ï¿½ï¿½ï¿½
 	
-	String OPT_CD_TCP_IP_OS = "TCP_IP_OS"; 			//¼¾ÅÍ°£ º¹Á¦ È¸¼±
-	String OPT_CD_TCP_IP_NAS = "TCP_IP_NAS"; 		//¼¾ÅÍ°£ º¹Á¦ NAS
-	String OPT_CD_TCP_IP_ADG = "TCP_IP_ADG"; 		//¼¾ÅÍ°£ º¹Á¦ EXADATA
-	String OPT_CD_TCP_IP_FC = "TCP_IP_FC"; 			//¼¾ÅÍ°£ º¹Á¦ FC
-	String OPT_CD_INTERNET = "INTERNET";			//¼¾ÅÍ°£ º¹Á¦ ÀÎÅÍ³Ý
-	String OPT_CD_TCP_IP_ARK = "TCP_IP_ARK"; 		//¼¾ÅÍ°£ º¹Á¦ ARK
-	String OPT_CD_TCP_IP_BACKUP = "TCP_IP_BACKUP"; 	//¼¾ÅÍ°£ º¹Á¦ ¼Ò»ê
+	String OPT_CD_TCP_IP_OS = "TCP_IP_OS"; 			//ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½
+	String OPT_CD_TCP_IP_NAS = "TCP_IP_NAS"; 		//ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ NAS
+	String OPT_CD_TCP_IP_ADG = "TCP_IP_ADG"; 		//ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ EXADATA
+	String OPT_CD_TCP_IP_FC = "TCP_IP_FC"; 			//ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ FC
+	String OPT_CD_INTERNET = "INTERNET";			//ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í³ï¿½
+	String OPT_CD_TCP_IP_ARK = "TCP_IP_ARK"; 		//ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ ARK
+	String OPT_CD_TCP_IP_BACKUP = "TCP_IP_BACKUP"; 	//ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ò»ï¿½
 	
-	String OPT_CD_NW_NETWORK= "NW_NETWORK"; 		//³×Æ®¿öÅ© 
-	String OPT_CD_NW_SECCURITY= "NW_SECCURITY"; 	//º¸¾È
-	String OPT_CD_NW_SAN= "NW_SAN"; 				//³×Æ®¿öÅ© À¯Áö¿î¿µ
+	String OPT_CD_NW_NETWORK= "NW_NETWORK"; 		//ï¿½ï¿½Æ®ï¿½ï¿½Å© 
+	String OPT_CD_NW_SECCURITY= "NW_SECCURITY"; 	//ï¿½ï¿½ï¿½ï¿½
+	String OPT_CD_NW_SAN= "NW_SAN"; 				//ï¿½ï¿½Æ®ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ï¿½î¿µ
 	
 	String OPT_CD_NETWORK_VPN= "NW_VPN"; 			//VPN
 	String OPT_CD_NETWORK_ROUTER= "NW_ROUTER"; 		//ROUTER
 	
-	String OPT_CD_MPLS= "MPLS"; 					//»çº°³×Æ®¿öÅ© (MPLS)
-	String OPT_CD_GENERAL_VAN= "GENERAL_VAN"; 		//Àü¿ë¼±/VAN
+	String OPT_CD_MPLS= "MPLS"; 					//ï¿½çº°ï¿½ï¿½Æ®ï¿½ï¿½Å© (MPLS)
+	String OPT_CD_GENERAL_VAN= "GENERAL_VAN"; 		//ï¿½ï¿½ë¼±/VAN
 	
-	String OPT_CD_REALTIME= "REALTIME"; 			//½Ç½Ã°£ º¹Á¦ (Vplex+ÅëÇÕSAN)
-	String OPT_CD_SYMANTEC= "SYMANTEC"; 			//¼Ò»ê ¼­ºñ½º
-	String OPT_CD_RECOVERPOINT= "RECOVERPOINT"; 	//½ÃÁ¡¹é¾÷ (VNX 5800)
+	String OPT_CD_REALTIME= "REALTIME"; 			//ï¿½Ç½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½ (Vplex+ï¿½ï¿½ï¿½ï¿½SAN)
+	String OPT_CD_SYMANTEC= "SYMANTEC"; 			//ï¿½Ò»ï¿½ ï¿½ï¿½ï¿½ï¿½
+	String OPT_CD_RECOVERPOINT= "RECOVERPOINT"; 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ (VNX 5800)
 	
-	String OPT_CD_NAS= "NAS_SHARED"; 				//°ø¿ëNAS
-	String OPT_CD_NAS_DEDICATED= "NAS_DEDICATED"; 	//Àü¿ëNAS
+	String OPT_CD_NAS= "NAS_SHARED"; 				//ï¿½ï¿½ï¿½NAS
+	String OPT_CD_NAS_DEDICATED= "NAS_DEDICATED"; 	//ï¿½ï¿½ï¿½NAS
 	
-	String OPT_CD_HA_SERVICE= "HA_SERVICE"; 		//HA ¼­ºñ½º
+	String OPT_CD_HA_SERVICE= "HA_SERVICE"; 		//HA ï¿½ï¿½ï¿½ï¿½
 	
-	String OPT_CD_NETWORK_PUBLIC= "NETWORK_PUBLIC"; 	//°ø¿ë ³×Æ®¿öÅ©
-	String OPT_CD_NETWORK_PRIVATE= "NETWORK_PRIVATE"; 	//Àü¿ë ³×Æ®¿öÅ©
-	String OPT_CD_NETWORK_DEPT= "NETWORK_DEPT"; 		//»çº°³×Æ®¿öÅ©
+	String OPT_CD_NETWORK_PUBLIC= "NETWORK_PUBLIC"; 	//ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½Å©
+	String OPT_CD_NETWORK_PRIVATE= "NETWORK_PRIVATE"; 	//ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½Å©
+	String OPT_CD_NETWORK_DEPT= "NETWORK_DEPT"; 		//ï¿½çº°ï¿½ï¿½Æ®ï¿½ï¿½Å©
 	
-	String OPT_CD_NW_DEDICATED= "NW_DEDICATED"; 		//ÀÏ¹Ý Àü¿ë ³×Æ®¿öÅ©
+	String OPT_CD_NW_DEDICATED= "NW_DEDICATED"; 		//ï¿½Ï¹ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½Å©
 	
 	String OPT_CD_SW_ORACLE_LINUX= "SW_ORACLE_LINUX"; //Oracle Linux
 	String OPT_CD_SW_REDHAT_LINUX= "SW_REDHAT_LINUX"; //Redhat Linux
-	String OPT_CD_NAS_SERVER_DEDICATED= "NAS_SERVER_DEDICATED"; //ÀÌ¸¶Æ® Àü¿ëNAS
+	String OPT_CD_NAS_SERVER_DEDICATED= "NAS_SERVER_DEDICATED"; //ï¿½Ì¸ï¿½Æ® ï¿½ï¿½ï¿½NAS
 	
 
 	
 	/**
-	 * ¶óÀÌ¼¾½ºÁ¾·ù ÄÚµå
+	 * ï¿½ï¿½ï¿½Ì¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½
 	 * */
 	String LCNS_TYP_SERVER = "SERVER";
 	String LCNS_TYP_CPU = "CPU";
@@ -112,65 +112,65 @@ public interface BillingConstants {
 	
 	
 	/**
-	 * Á¶Á¤¹æ¹ýÄÚµå
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 	 * */
-	String ADJ_METHOD_01 = "ADJ_M01"; //±Ý¾× º¸Á¤
-	String ADJ_METHOD_02 = "ADJ_M02"; //±â°£º¸Á¤
+	String ADJ_METHOD_01 = "ADJ_M01"; //ï¿½Ý¾ï¿½ ï¿½ï¿½ï¿½ï¿½
+	String ADJ_METHOD_02 = "ADJ_M02"; //ï¿½â°£ï¿½ï¿½ï¿½ï¿½
 	
 	/**
-	 * Á¶Á¤´ë»óÄÚµå
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 	 * */
-	String ADJ_TARGET_01 = "ADJ_T01"; //VM º¸Á¤
-	String ADJ_TARGET_02 = "ADJ_T02"; //Àü¿ë¼±º¸Á¤
-	String ADJ_TARGET_03 = "ADJ_T03"; //Àü¿ëNASº¸Á¤
-	String ADJ_TARGET_04 = "ADJ_T04"; //°ü°è»çº¸Á¤
+	String ADJ_TARGET_01 = "ADJ_T01"; //VM ï¿½ï¿½ï¿½ï¿½
+	String ADJ_TARGET_02 = "ADJ_T02"; //ï¿½ï¿½ë¼±ï¿½ï¿½ï¿½ï¿½
+	String ADJ_TARGET_03 = "ADJ_T03"; //ï¿½ï¿½ï¿½NASï¿½ï¿½ï¿½ï¿½
+	String ADJ_TARGET_04 = "ADJ_T04"; //ï¿½ï¿½ï¿½çº¸ï¿½ï¿½
 	
 	/**
-	 * ÇØ´ç»çÇ×¾øÀ½
+	 * ï¿½Ø´ï¿½ï¿½ï¿½×¾ï¿½ï¿½ï¿½
 	 * */
 	String NA = "N/A";
 	
 	/**
-	 * °ú±ÝÃÊ±âÈ­¸¦ ÇÏ´Â ½ÃÁ¡¿¡ ÀüÀÏ °ú±Ýµ¥ÀÌÅÍ¸¦ »èÁ¦ÇØ¾ßÇÏ´Â Å×ÀÌºí
+	 * ï¿½ï¿½ï¿½ï¿½Ê±ï¿½È­ï¿½ï¿½ ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ýµï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 	 * */
-	String DEL_TBL_ACT_CHRG_SVR  			= "ACT_CHRG_SVR"; 			//°ú±Ý´ë»ó¼­¹ö
-	String DEL_TBL_ACT_SVC_USE_DTL  		= "ACT_SVC_USE_DTL"; 		//¼­ºñ½º»ç¿ë³»¿ª
-	String DEL_TBL_ACT_SW_USE_DTL  			= "ACT_SW_USE_DTL"; 		//SW »ç¿ë³»¿ª\
-	String DEL_TBL_ACT_USEVAL_BASED_CHRG_DTL = "ACT_USEVAL_BASED_CHRG_DTL"; 		//»ç¿ë·®±â¹Ý°ú±Ý³»¿ª
-	String DEL_TBL_ACT_USEVAL_BASED_USE_DTL  = "ACT_USEVAL_BASED_USE_DTL"; 		//»ç¿ë·®±â¹Ý»ç¿ë³»¿ª
+	String DEL_TBL_ACT_CHRG_SVR  			= "ACT_CHRG_SVR"; 			//ï¿½ï¿½Ý´ï¿½ó¼­¹ï¿½
+	String DEL_TBL_ACT_SVC_USE_DTL  		= "ACT_SVC_USE_DTL"; 		//ï¿½ï¿½ï¿½ñ½º»ï¿½ë³»ï¿½ï¿½
+	String DEL_TBL_ACT_SW_USE_DTL  			= "ACT_SW_USE_DTL"; 		//SW ï¿½ï¿½ë³»ï¿½ï¿½\
+	String DEL_TBL_ACT_USEVAL_BASED_CHRG_DTL = "ACT_USEVAL_BASED_CHRG_DTL"; 		//ï¿½ï¿½ë·®ï¿½ï¿½Ý°ï¿½Ý³ï¿½ï¿½ï¿½
+	String DEL_TBL_ACT_USEVAL_BASED_USE_DTL  = "ACT_USEVAL_BASED_USE_DTL"; 		//ï¿½ï¿½ë·®ï¿½ï¿½Ý»ï¿½ë³»ï¿½ï¿½
 	
 	
-	String DEL_TBL_BILL_CHRG_MSTR  			= "BILL_CHRG_MSTR"; 		//°ú±Ý¿øÀå
-	String DEL_TBL_BILL_SW_DTL  			= "BILL_SW_DTL"; 			// °ú±Ý¿øÀåSW³»¿ª
-	String DEL_TBL_BILL_COMM_BIZ_CHRG_DTL 	= "BILL_COMM_BIZ_CHRG_DTL"; //°øÅë¾÷¹« °ú±Ý³»¿ª
-	String DEL_TBL_BILL_COMM_BIZ_DSTRBT 	= "BILL_COMM_BIZ_DSTRBT"; 	//°øÅë¾÷¹«¹èºÐ³»¿ª
-	String DEL_TBL_BILL_COMM_BIZ_DSTRBT_SMRY = "BILL_COMM_BIZ_DSTRBT_SMRY"; //°øÅë¾÷¹« °ú±Ý³»¿ªÁý°è
-	String DEL_TBL_BILL_SYS_CHRG_SMRY 		= "BILL_SYS_CHRG_SMRY"; 		//¾÷¹«´ÜÀ§ °ú±Ý³»¿ªÁý°è
+	String DEL_TBL_BILL_CHRG_MSTR  			= "BILL_CHRG_MSTR"; 		//ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½
+	String DEL_TBL_BILL_SW_DTL  			= "BILL_SW_DTL"; 			// ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½SWï¿½ï¿½ï¿½ï¿½
+	String DEL_TBL_BILL_COMM_BIZ_CHRG_DTL 	= "BILL_COMM_BIZ_CHRG_DTL"; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ý³ï¿½ï¿½ï¿½
+	String DEL_TBL_BILL_COMM_BIZ_DSTRBT 	= "BILL_COMM_BIZ_DSTRBT"; 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð³ï¿½ï¿½ï¿½
+	String DEL_TBL_BILL_COMM_BIZ_DSTRBT_SMRY = "BILL_COMM_BIZ_DSTRBT_SMRY"; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ý³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	String DEL_TBL_BILL_SYS_CHRG_SMRY 		= "BILL_SYS_CHRG_SMRY"; 		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ý³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
-	// °ü°è»ç´ÜÀ§ °ú±Ý³»¿ª ACT_AFLT_VAN_SVC_USE_DTL
-	String DEL_TBL_ACT_AFLT_VAN_SVC_USE_DTL  	= "ACT_AFLT_VAN_SVC_USE_DTL"; //°ü°è»ç´ÜÀ§ÀÇ °øÅë¾÷¹« VAN ¹èºÐ ³»¿ª
-	String DEL_TBL_ACT_AFLT_SVC_USE_DTL  	= "ACT_AFLT_SVC_USE_DTL"; 		//°ü°è»ç´ÜÀ§ÀÇ ¼­ºñ½º »ç¿ë³»¿ª
-	String DEL_TBL_BILL_AFLT_CHRG_MSTR  	= "BILL_AFLT_CHRG_MSTR"; 		//°ü°è»ç´ÜÀ§ÀÇ °ú±Ý¸¶½ºÅÍ
-	// °ü°è»ç´ÜÀ§ °ú±Ý³»¿ª 
-	String DEL_TBL_ACT_AFLT_NAS_USE_DTL  	= "ACT_AFLT_NAS_USE_DTL"; 		//°ü°è»ç´ÜÀ§ÀÇ NAS »ç¿ë³»¿ª
-	String DEL_TBL_ACT_CHRG_AFLT_NAS  		= "ACT_CHRG_AFLT_NAS"; 			//°ü°è»ç´ÜÀ§ÀÇ NAS ¼­¹ö¸ñ·Ï 
-	String DEL_TBL_BILL_AFLT_NAS_MSTR  		= "BILL_AFLT_NAS_CHRG_MSTR"; 	//°ü°è»ç´ÜÀ§ÀÇ NAS °ú±Ý¸¶½ºÅÍ
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ý³ï¿½ï¿½ï¿½ ACT_AFLT_VAN_SVC_USE_DTL
+	String DEL_TBL_ACT_AFLT_VAN_SVC_USE_DTL  	= "ACT_AFLT_VAN_SVC_USE_DTL"; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ VAN ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	String DEL_TBL_ACT_AFLT_SVC_USE_DTL  	= "ACT_AFLT_SVC_USE_DTL"; 		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ë³»ï¿½ï¿½
+	String DEL_TBL_BILL_AFLT_CHRG_MSTR  	= "BILL_AFLT_CHRG_MSTR"; 		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ý¸ï¿½ï¿½ï¿½ï¿½ï¿½
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ý³ï¿½ï¿½ï¿½ 
+	String DEL_TBL_ACT_AFLT_NAS_USE_DTL  	= "ACT_AFLT_NAS_USE_DTL"; 		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ NAS ï¿½ï¿½ë³»ï¿½ï¿½
+	String DEL_TBL_ACT_CHRG_AFLT_NAS  		= "ACT_CHRG_AFLT_NAS"; 			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ NAS ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	String DEL_TBL_BILL_AFLT_NAS_MSTR  		= "BILL_AFLT_NAS_CHRG_MSTR"; 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ NAS ï¿½ï¿½Ý¸ï¿½ï¿½ï¿½ï¿½ï¿½
 	
-	String DEL_TBL_BILL_BILL_MSTR 			= "BILL_BILL_MSTR"; 			//Ã»±¸¸¶½ºÅÍ- ÅëÇÕÀÎÇÁ¶ó
-	String DEL_TBL_BILL_DR_BILL_MSTR 			= "BILL_DR_BILL_MSTR"; 		//Ã»±¸¸¶½ºÅÍ - DR
-	String DEL_TBL_BILL_AFLT_BILL_MSTR 		= "BILL_AFLT_BILL_MSTR"; 		//°ü°è»çº°Ã»±¸¸¶½ºÅÍ
-	//¹éÈ­Á¡ ¹èºÐ
-	String DEL_TBL_BILL_DEPTSTORE_DSTRBT_MSTR 		= "BILL_DEPTSTORE_DSTRBT_MSTR"; 		//°ü°è»çº°Ã»±¸¸¶½ºÅÍ
-	String DEL_TBL_BILL_DEPTSTORE_DSTRBT_DTL 		= "BILL_DEPTSTORE_DSTRBT_DTL"; 		//°ü°è»çº°Ã»±¸¸¶½ºÅÍ
+	String DEL_TBL_BILL_BILL_MSTR 			= "BILL_BILL_MSTR"; 			//Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	String DEL_TBL_BILL_DR_BILL_MSTR 			= "BILL_DR_BILL_MSTR"; 		//Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ - DR
+	String DEL_TBL_BILL_AFLT_BILL_MSTR 		= "BILL_AFLT_BILL_MSTR"; 		//ï¿½ï¿½ï¿½çº°Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	//ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ï¿½
+	String DEL_TBL_BILL_DEPTSTORE_DSTRBT_MSTR 		= "BILL_DEPTSTORE_DSTRBT_MSTR"; 		//ï¿½ï¿½ï¿½çº°Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	String DEL_TBL_BILL_DEPTSTORE_DSTRBT_DTL 		= "BILL_DEPTSTORE_DSTRBT_DTL"; 		//ï¿½ï¿½ï¿½çº°Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
 	
 
 	
 
 	
-	//°ü°è»ç °ú±Ý¿øÀå
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½
 	/**
-	 * °ú±Ý¹èÄ¡ÀÛ¾÷ ½ÇÇà»óÅÂ
+	 * ï¿½ï¿½Ý¹ï¿½Ä¡ï¿½Û¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * */
 	String RUN_STAT_RUNNING = "RUNNING";
 	String RUN_STAT_NOT_RUNNING = "NOT_RUNNING";
@@ -178,30 +178,30 @@ public interface BillingConstants {
 	String RUN_STAT_ERROR = "ERROR";
 
 	/**
-	 * ¸ðµ¨Àû¿ë°ü°è»çÄÚµå
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 	 * */
 	String MDL_AFLT_DEFAULT = "DEFAULT";
 	String MDL_AFLT_SHARED = "SHARED";
 	/*
-	 * °ü°è»çÄÚµå
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 	 * */
 	String AFLT_D_INC = "D_008";
 	
 	/*
-	 * ¼¾ÅÍÄÚµå
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 	 * */
-	String CENTER_01 = "CENTER01";	//ÅëÇÕÀÎÇÁ¶ó
-	String CENTER_02 = "CENTER02";	//DR¼¾ÅÍ
+	String CENTER_01 = "CENTER01";	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	String CENTER_02 = "CENTER02";	//DRï¿½ï¿½ï¿½ï¿½
 	
 	/*
-	 * ¼­ºñ½º±¸ºÐ
+	 * ï¿½ï¿½ï¿½ñ½º±ï¿½ï¿½ï¿½
 	 * */
 	String SVC_GBN_VM = "VM"; 		//VM		
-	String SVC_GBN_AFLT = "AFLT";	//°ü°è»ç
-	String SVC_GBN_SW = "SW";	//SW ¶óÀÌ¼¾½º
-	String SVC_GBN_EXCLCRCT = "EXCL_CRCT";	//Àü¿ë¼±
+	String SVC_GBN_AFLT = "AFLT";	//ï¿½ï¿½ï¿½ï¿½
+	String SVC_GBN_SW = "SW";	//SW ï¿½ï¿½ï¿½Ì¼ï¿½ï¿½ï¿½
+	String SVC_GBN_EXCLCRCT = "EXCL_CRCT";	//ï¿½ï¿½ë¼±
 	
-	/*°¡»óÈ­ÄÚµå(ÇÏÀÌÆÛ¹ÙÀÌÀú)
+	/*ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½Û¹ï¿½ï¿½ï¿½ï¿½ï¿½)
 	 * */
 	//LEGACY
 	//EXADATA
@@ -211,11 +211,11 @@ public interface BillingConstants {
 	//OVM
 	//POWERVM_I710\\\
 	
-	String DSTRBT_TYP_ALL = "ALL"; //ÀüÃ¼±ÝÃ¥ 
-	String DSTRBT_TYP_COM_AMT_EXPT = "COM_AMT_EXCPT"; //°øÅë,Àç¹« Á¦¿Ü
-	String DSTRBT_TYP_COM_AMT = "COM_AMT";	//°øÅë,Àç¹«
+	String DSTRBT_TYP_ALL = "ALL"; //ï¿½ï¿½Ã¼ï¿½ï¿½Ã¥ 
+	String DSTRBT_TYP_COM_AMT_EXPT = "COM_AMT_EXCPT"; //ï¿½ï¿½ï¿½ï¿½,ï¿½ç¹« ï¿½ï¿½ï¿½ï¿½
+	String DSTRBT_TYP_COM_AMT = "COM_AMT";	//ï¿½ï¿½ï¿½ï¿½,ï¿½ç¹«
 	
-	String CHRG_METHD_GBN_U = "U"; //»ç¿ë·®
-	String CHRG_METHD_GBN_A = "A";  //ÇÒ´ç·®
+	String CHRG_METHD_GBN_U = "U"; //ï¿½ï¿½ë·®
+	String CHRG_METHD_GBN_A = "A";  //ï¿½Ò´ç·®
 	
 }
