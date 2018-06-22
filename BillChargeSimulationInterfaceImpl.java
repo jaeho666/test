@@ -16,7 +16,7 @@ import com.nkia.xeus.entity.billing.charge.BillChargeSimulationVO;
  * <p>��ݰ��� ����� ����
  * 
  */
-public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationInterface {
+public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationInterface { 
 	NNPLogger log = NNPLogger.getLogger(BillChargeSimulationInterfaceImpl.class);
 	//long price = 0;
 	private BillChargeSimulationVO chrgSimul; 
