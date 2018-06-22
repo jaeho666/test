@@ -3,7 +3,7 @@ package com.nkia.xeus.service.billing.charge;
  * <p> �������� ����ϴ� ��� ����
  * 
  */
-public interface BillingConstants {
+public interface BillingConstants { 
 	/**
 	 * commit ���ذ���
 	 * */
