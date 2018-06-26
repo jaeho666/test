@@ -17,7 +17,7 @@ import com.nkia.xeus.util.DateUtil;
 /**
  * <p>��ݹ�ġ ������ ��� ���� * 
  */
-public class ChargeBatchMasterInterfaceImpl implements ChargeBatchMasterInterface {
+public class ChargeBatchMasterInterfaceImpl implements ChargeBatchMasterInterface { 
 	//static Logger log = Logger.getLogger(ChargeBatchMasterServiceImpl.class);
 	//static Logger log = Logger.getLogger("charge");
 	NNPLogger log = NNPLogger.getLogger(ChargeBatchMasterInterfaceImpl.class);
