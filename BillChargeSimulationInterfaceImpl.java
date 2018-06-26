@@ -13,19 +13,19 @@ import com.nkia.xeus.entity.billing.charge.BillChargeSimulationVO;
 @ManagedResource(objectName = "xeus:name=BillChargeSimulationService,type=service")
 @Service("BillChargeSimulationService")
 /**
- * <p>¿ä±Ý°è»ê±â ±â´ÉÀ» ±¸Çö
+ * <p>ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
  * 
  */
-public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationInterface {
+public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationInterface { 
 	NNPLogger log = NNPLogger.getLogger(BillChargeSimulationInterfaceImpl.class);
 	//long price = 0;
 	private BillChargeSimulationVO chrgSimul; 
 	private List<ActSvcUseDtlVO> svcUseDtlList = new ArrayList<ActSvcUseDtlVO>();
 	
 	/**
-	 * <p>ÀüÃ¼ ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>ï¿½ï¿½Ã¼ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO  getMmExptChargePrice(BillChargeSimulationVO svcDtl) throws Exception{
@@ -41,9 +41,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		return svcDtl;
 	}
 	/**
-	 * <p>cpu ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>cpu ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO caluSimulation(BillChargeSimulationVO svcDtl)throws Exception{
@@ -51,26 +51,26 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		BillChargeSimulationVO resultVo = svcDtl;
 		long totAmt = 0l;
 		try{
-			//cpu ¿ä±Ý°è»ê
+			//cpu ï¿½ï¿½Ý°ï¿½ï¿½
 			if(svcDtl.getCoreCnt() > 0 ){
 				resultVo = this.getCorePrice( resultVo);
 				totAmt += resultVo.getCpuPrice();
 				//log.info("totAmt:" +totAmt );
 			}
-			//mem ¿ä±Ý°è»ê
+			//mem ï¿½ï¿½Ý°ï¿½ï¿½
 			if(svcDtl.getMemSz() > 0 ){
 				resultVo = this.getMemoryPrice(resultVo);
 				totAmt +=resultVo.getMemPrice();
 				//log.info("totAmt:" +totAmt );
 			}
-			// local os  µð½ºÅ©
+			// local os  ï¿½ï¿½Å©
 			if(svcDtl.getOsLocDskSz() > 0 ){
 				resultVo = this.getOsLocalDiskPrice(resultVo);
 				totAmt +=resultVo.getOsLocDskPrice();
 						
 				//log.info("totAmt:" +totAmt );
 			}
-			// local data  µð½ºÅ©
+			// local data  ï¿½ï¿½Å©
 			if(svcDtl.getDataLocDskSz() > 0 ){
 				log.info("getDataLocDskSz:" +svcDtl.getDataLocDskSz() );
 				resultVo = this.getDataLocalDiskPrice(resultVo);
@@ -78,49 +78,49 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 				//log.info("totAmt:" +totAmt );
 			}
 			
-			// vnx os µð½ºÅ©
+			// vnx os ï¿½ï¿½Å©
 			if(svcDtl.getOsDskSz() > 0 ){
 				resultVo = this.getOsDiskPrice(resultVo);
 				totAmt +=resultVo.getOsDskPrice();
 				//log.info("totAmt:" +totAmt );
 			}
 			
-			// vnx data µð½ºÅ©
+			// vnx data ï¿½ï¿½Å©
 			if(svcDtl.getDataDskSz() > 0 ){
 				resultVo = this.getDataDiskPrice(resultVo);
 				totAmt +=resultVo.getDataDskPrice();
 				//log.info("totAmt:" +totAmt );
 			}
 						
-			// v7000 os µð½ºÅ©
+			// v7000 os ï¿½ï¿½Å©
 			if(svcDtl.getOsV7000Sz() > 0 ){
 				resultVo = this.getOsV7000DiskPrice(resultVo);
 				totAmt +=resultVo.getOsV7000Price();
 				//log.info("totAmt:" +totAmt );
 			}
 						
-			// v7000 data µð½ºÅ©
+			// v7000 data ï¿½ï¿½Å©
 			if(svcDtl.getDataV7000Sz() > 0 ){
 				resultVo = this.getDataV7000DiskPrice(resultVo);
 				totAmt +=resultVo.getDataV7000Price();
 				//log.info("totAmt:" +totAmt );
 			}
 			
-			// vmax os µð½ºÅ©
+			// vmax os ï¿½ï¿½Å©
 			if(svcDtl.getOsVmaxSz() > 0 ){
 				resultVo = this.getOsVmaxDiskPrice(resultVo);
 				totAmt +=resultVo.getOsVmaxPrice();
 				//log.info("totAmt:" +totAmt );
 			}
 						
-			// vmax data µð½ºÅ©
+			// vmax data ï¿½ï¿½Å©
 			if(svcDtl.getDataVmaxSz() > 0 ){
 				resultVo = this.getDataVmaxDiskPrice(resultVo);
 				totAmt +=resultVo.getDataVmaxPrice();
 				//log.info("totAmt:" +totAmt );
 			}
 		
-			//HA¼­ºñ½º
+			//HAï¿½ï¿½ï¿½ï¿½
 			if(svcDtl.isHa() ){
 				resultVo = this.getHaPrice(resultVo);
 				totAmt +=resultVo.getHaPrice();
@@ -128,14 +128,14 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 			}
 			
 			
-			// Nutanix os µð½ºÅ©
+			// Nutanix os ï¿½ï¿½Å©
 			if(svcDtl.getNutanixOsDskSz() > 0 ){
 				resultVo = this.getNutanixOsDiskPrice(resultVo);
 				totAmt +=resultVo.getNutanixOsDskPrice();
 				//log.info("totAmt:" +totAmt );
 			}
 			
-			// Nutanix data µð½ºÅ©
+			// Nutanix data ï¿½ï¿½Å©
 			if(svcDtl.getNutanixDataDskSz() > 0 ){
 				resultVo = this.getNutanixDataDiskPrice(resultVo);
 				totAmt +=resultVo.getNutanixDataDskPrice();
@@ -144,18 +144,18 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 			
 			//////////////////////////////////////////////////////////////////////////
 			
-			//DR  OS µð½ºÅ© »çÀÌÁî
+			//DR  OS ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if(svcDtl.getOsEioSz() > 0 ){
 				resultVo = this.getEioDiskPrice(resultVo);
 				totAmt += resultVo.getOsEioPrice();
 			}
-			//DR  unix µð½ºÅ© »çÀÌÁî
+			//DR  unix ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if(svcDtl.getUnixDiskSz() > 0 ){
 				resultVo = this.getUnixDiskPrice(resultVo);
 				totAmt += resultVo.getUnixDiskPrice();
 			}
 			
-			//DR  vCloud µð½ºÅ© »çÀÌÁî
+			//DR  vCloud ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if(svcDtl.getvCloudDiskSz() > 0 ){
 				resultVo = this.getVcloudDiskPrice(resultVo);
 				totAmt += resultVo.getvCloudDiskPrice();
@@ -168,79 +168,79 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 				//log.info("totAmt:" +totAmt );
 			}
 			
-			//DR °ø¿ënas
-			//°ø¿ëNAS »çÀÌÁî
+			//DR ï¿½ï¿½ï¿½nas
+			//ï¿½ï¿½ï¿½NAS ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if(svcDtl.getPubNasSz() > 0 ){
 				resultVo = this.getpubNasPrice(resultVo);
 				totAmt +=resultVo.getPubNasPrice();
 			}
 			
-			//½Ç½Ã°£ º¹Á¦
+			//ï¿½Ç½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½
 			if(svcDtl.getRealTimeSz() > 0){
 				resultVo = this.getRealTimePrice(resultVo);
 				totAmt +=resultVo.getRealTimePrice();
 			}
 			
-			//symantecBackupSz ¼Ò»ê
+			//symantecBackupSz ï¿½Ò»ï¿½
 			if(svcDtl.getSymantecBackupSz() > 0 ){
 				resultVo = this.getSymantecBackupPrice(resultVo);
 				totAmt += resultVo.getSymantecBackupPrice();
 			}
 			
-			//¼¾ÅÍ°£ È¸¼±  -os
+			//ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½  -os
 			if(svcDtl.isTcpIpOs() ){
 				resultVo = this.getTcpIpOsPrice(resultVo);
 				totAmt +=resultVo.getTcpIpOsPrice();
 			}
 			
-			//¼¾ÅÍ°£ È¸¼±- NAS 
+			//ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½- NAS 
 			if(svcDtl.getTcpIpNasSz() > 0 ){
 				resultVo = this.getTcpIpNasPrice(resultVo);
 				totAmt +=resultVo.getTcpIpNasPrice();
 			}
 			
-			//¼¾ÅÍ°£ È¸¼± - ADG
+			//ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ - ADG
 			if(svcDtl.getTcpIpAdgSz() > 0 ){
 				resultVo = this.getTcpIpAdgPrice(resultVo);
 				totAmt +=resultVo.getTcpIpAdgPrice();
 			}
 			
-			//¼¾ÅÍ°£ È¸¼± - ARK
+			//ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ - ARK
 			if(svcDtl.getTcpIpArkSz() > 0 ){
 				resultVo = this.getTcpIpArkPrice(resultVo);
 				totAmt +=resultVo.getTcpIpArkPrice();
 			}
 			
-			//¼¾ÅÍ°£ È¸¼±  -¼Ò»ê
+			//ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½  -ï¿½Ò»ï¿½
 			if(svcDtl.getTcpIpBackupSz() > 0 ){
 				resultVo = this.getTcpIpBackupPrice(resultVo);
 				totAmt +=resultVo.getTcpIpBackupPrice();
 			}
 			
-			///¼¾ÅÍ°£ È¸¼± -½Ç½Ã°£º¹Á¦
+			///ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ -ï¿½Ç½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½
 			if(svcDtl.getTcpIpFcSz() > 0 ){
 				resultVo = this.getTcpIpFcPrice(resultVo);
 				totAmt +=resultVo.getTcpIpFcPrice();
 			}
 			
-			//ÀÎÅÍ³Ý 
+			//ï¿½ï¿½ï¿½Í³ï¿½ 
 			if(svcDtl.isTcpIpInternet() ){
 				resultVo = this.getTcpIpInternetPrice(resultVo);
 				totAmt +=resultVo.getTcpIpInternetPrice();
 			}
 			
-			//°ø¿ë³×Æ®¿öÅ©  ³×Æ®¿öÅ© 
+			//ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½Å©  ï¿½ï¿½Æ®ï¿½ï¿½Å© 
 			if(svcDtl.isNwNetwork()){
 				resultVo = this.getNwNetworkPrice(resultVo);
 				totAmt +=resultVo.getNwNetworkPrice();
 			}
 			
-			//°ø¿ë³×Æ®¿öÅ©  º¸¾È
+			//ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½Å©  ï¿½ï¿½ï¿½ï¿½
 			if(svcDtl.isNwSecurity()){
 				resultVo = this.getNwSecurityPrice(resultVo);
 				totAmt +=resultVo.getNwSecurityPrice();
 			}
-			//°ø¿ë³×Æ®¿öÅ© ³×Æ®¿öÅ©/º¸¾È À¯Áö¿î¿µ
+			//ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½Å© ï¿½ï¿½Æ®ï¿½ï¿½Å©/ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½î¿µ
 			if(svcDtl.isNwSan()){
 				resultVo = this.getNwSanPrice(resultVo);
 				totAmt += resultVo.getNwSanPrice();
@@ -248,7 +248,7 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 			
 			if(svcDtl.getSwDtl() != null){
 				log.info("svcDtl.getSwDtl().size() : "+ svcDtl.getSwDtl().size());
-				//swºñ¿ë
+				//swï¿½ï¿½ï¿½
 				if(svcDtl.getSwDtl().size() > 0){
 					resultVo = this.getSwPrice(resultVo);
 					totAmt +=resultVo.getSwTotPrice();
@@ -268,19 +268,19 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		return resultVo;
 	}
 	
-	//¼­ºñ½ºÇ×¸ñ »ý¼º
+	//ï¿½ï¿½ï¿½ï¿½ï¿½×¸ï¿½ ï¿½ï¿½
 	public void createSvcUseDtl() throws Exception{
 		/*
 		ActSvcUseDtlVO svcUseDtl = new ActSvcUseDtlVO();
 		//int iCnt = 0;
-		//¼¾ÅÍÄÚµå
+		//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 		svcUseDtl.setCntrCd(this.chrgSimul.getCntrCd());
-		//°¡»óÈ­ÄÚµå
+		//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 		svcUseDtl.setVrtlCd(this.chrgSimul.getVtrlCd());
-		//OSÄÚµå
+		//OSï¿½Úµï¿½
 		svcUseDtl.setOsCd(this.chrgSimul.getOsCd());
 		
-		//cpu ¼ÂÆÃ
+		//cpu ï¿½ï¿½ï¿½ï¿½
 		log.info(" core : " + this.chrgSimul.getCoreCnt());
 		if(this.chrgSimul.getCoreCnt() > 0 ){
 			svcUseDtl.setTypCd(BillingConstants.TYP_CD_CPU);
@@ -288,7 +288,7 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 			svcUseDtlList.add(svcUseDtl);
 		}
 		
-		//MEMORY ¼ÂÆÃ
+		//MEMORY ï¿½ï¿½ï¿½ï¿½
 		log.info(" memory : " + this.chrgSimul.getMemSz());
 		if(this.chrgSimul.getMemSz() > 0 ){
 			
@@ -329,49 +329,49 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 			svcUseDtlList.add(svcUseDtl);
 		}
 		
-		//¼Ò»ê »çÀÌÁî
+		//ï¿½Ò»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		log.info(" symantecBackupSz : " + this.chrgSimul.getSymantecBackupSz());
 		if(this.chrgSimul.getExaDiskSz() > 0 ){
 			svcUseDtl.setTypCd(BillingConstants.TYP_CD_BACKUP);
 			svcUseDtl.setOptCd(BillingConstants.OPT_CD_SYMANTEC);
 			svcUseDtlList.add(svcUseDtl);
 		}
-		//½ÃÁ¡¹é¾÷¿©ºÎ
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		log.info(" isRecoverPoint : " + this.chrgSimul.isRecoverPoint());
 		if(this.chrgSimul.isRecoverPoint()){
 			svcUseDtl.setTypCd(BillingConstants.TYP_CD_BACKUP);
 			svcUseDtl.setOptCd(BillingConstants.OPT_CD_RECOVERPOINT);
 			svcUseDtlList.add(svcUseDtl);
 		}
-		//½Ç½Ã°£º¹Á¦¿©ºÎ
+		//ï¿½Ç½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		log.info(" isRealTime : " + this.chrgSimul.isRealTime());
 		if(this.chrgSimul.isRealTime()){
 			svcUseDtl.setTypCd(BillingConstants.TYP_CD_DR_DUPLICATE);
 			svcUseDtl.setOptCd(BillingConstants.OPT_CD_REALTIME);
 			svcUseDtlList.add(svcUseDtl);
 		}
-		//¼¾ÅÍ°£ È¸¼±  -osºÎ
+		//ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½  -osï¿½ï¿½
 		log.info(" isTcpIpOs : " + this.chrgSimul.isTcpIpOs());
 		if(this.chrgSimul.isTcpIpOs()){
 			svcUseDtl.setTypCd(BillingConstants.TYP_CD_DR_CIRCUIT);
 			svcUseDtl.setOptCd(BillingConstants.OPT_CD_TCP_IP_OS);
 			svcUseDtlList.add(svcUseDtl);
 		}
-		//¼¾ÅÍ°£ È¸¼±  -exaºÎ
+		//ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½  -exaï¿½ï¿½
 		log.info(" isTcpIpExaData : " + this.chrgSimul.isTcpIpExaData());
 		if(this.chrgSimul.isTcpIpExaData()){
 			svcUseDtl.setTypCd(BillingConstants.TYP_CD_DR_CIRCUIT);
 			svcUseDtl.setOptCd(BillingConstants.OPT_CD_TCP_IP_EXADATA);
 			svcUseDtlList.add(svcUseDtl);
 		}
-		//¼¾ÅÍ°£ È¸¼±  -¼Ò»ê
+		//ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½  -ï¿½Ò»ï¿½
 		log.info(" isTcpIpBackup : " + this.chrgSimul.isTcpIpBackup());
 		if(this.chrgSimul.isTcpIpBackup()){
 			svcUseDtl.setTypCd(BillingConstants.TYP_CD_DR_CIRCUIT);
 			svcUseDtl.setOptCd(BillingConstants.OPT_CD_TCP_IP_BACKUP);
 			svcUseDtlList.add(svcUseDtl);
 		}
-		//¼¾ÅÍ°£ È¸¼±  - ½Ç½Ã°£º¹Á¦
+		//ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½  - ï¿½Ç½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½
 		log.info(" isTcpIpFc : " + this.chrgSimul.isTcpIpFc());
 		if(this.chrgSimul.isTcpIpFc()){
 			svcUseDtl.setTypCd(BillingConstants.TYP_CD_DR_CIRCUIT);
@@ -379,7 +379,7 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 			svcUseDtlList.add(svcUseDtl);
 		}
 		
-		//¼¾ÅÍ°£ È¸¼± - °ø¿ëNAS
+		//ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ - ï¿½ï¿½ï¿½NAS
 		log.info(" pubNasSz : " + this.chrgSimul.getPubNasSz());
 		if(this.chrgSimul.getPubNasSz() > 0){
 			svcUseDtl.setTypCd(BillingConstants.TYP_CD_NAS_PUBLIC);
@@ -387,14 +387,14 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 			svcUseDtlList.add(svcUseDtl);
 		}
 		
-		//¼¾ÅÍ°£ È¸¼± -  º¸¾È
+		//ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ -  ï¿½ï¿½ï¿½ï¿½
 		log.info(" isNwSecurity : " + this.chrgSimul.isNwSecurity());
 		if(this.chrgSimul.isNwSecurity()){
 			svcUseDtl.setTypCd(BillingConstants.TYP_CD_NAS_PUBLIC);
 			svcUseDtl.setOptCd(BillingConstants.OPT_CD_NW_SECCURITY);
 			svcUseDtlList.add(svcUseDtl);
 		}
-		//¼¾ÅÍ°£ È¸¼± -  º¸¾È
+		//ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ -  ï¿½ï¿½ï¿½ï¿½
 		log.info(" isNwSecurity : " + this.chrgSimul.isNwSan());
 		if(this.chrgSimul.isNwSan()){
 			svcUseDtl.setTypCd(BillingConstants.TYP_CD_NAS_PUBLIC);
@@ -405,9 +405,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 	}
 
 	/**
-	 * <p>cpu ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>cpu ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getCorePrice(BillChargeSimulationVO svcDtl)throws  Exception{
@@ -417,17 +417,17 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		long mmExptPrice =0;
 		//chrgSimul = svcDtl ;
 		//int iCnt = 0;
-		//¼¾ÅÍÄÚµå
+		//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 		try{
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
 			
-			//cpu ¼ÂÆÃ
+			//cpu ï¿½ï¿½ï¿½ï¿½
 			log.info(" core : " + resultVo.getCoreCnt());
 			if(resultVo.getCoreCnt() > 0 ){
 				svcUseDtl.setTypCd(BillingConstants.TYP_CD_CPU);
@@ -435,7 +435,7 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 				svcUseDtl.setDoubleQts(resultVo.getCoreCnt());
 				//svcUseDtlList.add(svcUseDtl);
 			}
-			//ÇØ´ç ¼­ºñ½º ¿ù¿¹»ó±Ý¾× Á¶È¸
+			//ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸
 			ChargeCalcSimulation simuCalc = new ChargeCalcSimulation(svcUseDtl);
 			simuCalc.calcOfAllocQts();
 			mmExptPrice = simuCalc.getSvcAmt();
@@ -458,9 +458,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 	}
 	
 	/**
-	 * <p>¸Þ¸ð¸® ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	  * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>ï¿½Þ¸ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	  * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getMemoryPrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -471,15 +471,15 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		//chrgSimul = svcDtl ;
 		//int iCnt = 0;
 		try{
-			//¼¾ÅÍÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
-			//cpu ¼ÂÆÃ
+			//cpu ï¿½ï¿½ï¿½ï¿½
 			log.info(" mem : " + resultVo.getMemSz());
 			if(resultVo.getMemSz() > 0 ){
 				svcUseDtl.setTypCd(BillingConstants.TYP_CD_MEMORY);
@@ -487,7 +487,7 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 				svcUseDtl.setDoubleQts(resultVo.getMemSz());
 				//svcUseDtlList.add(svcUseDtl);
 			}
-			//ÇØ´ç ¼­ºñ½º ¿ù¿¹»ó±Ý¾× Á¶È¸
+			//ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸
 			ChargeCalcSimulation simuCalc = new ChargeCalcSimulation(svcUseDtl);
 			simuCalc.calcOfAllocQts();
 			mmExptPrice = simuCalc.getSvcAmt();
@@ -509,9 +509,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 	}
 	
 	/**
-	 * <p>exa disk ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>exa disk ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getExaDiskPrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -521,15 +521,15 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		long mmExptPrice =0;
 		try{
 			//int iCnt = 0;
-			//¼¾ÅÍÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
-			//ExaDiskSz ¼ÂÆÃ
+			//ExaDiskSz ï¿½ï¿½ï¿½ï¿½
 			log.info(" OPT_CD_EXT_EXADATA_DISK SZ : " + resultVo.getExaDiskSz());
 			if(resultVo.getExaDiskSz() > 0 ){
 				svcUseDtl.setTypCd(BillingConstants.TYP_CD_DISK);
@@ -562,9 +562,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 	
 	
 	/**
-	 * <p>os local disk ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>os local disk ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getOsLocalDiskPrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -574,15 +574,15 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		long mmExptPrice =0;
 		try{
 			//int iCnt = 0;
-			//¼¾ÅÍÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
-			//x86OsDiskSz ¼ÂÆÃ
+			//x86OsDiskSz ï¿½ï¿½ï¿½ï¿½
 			log.info(" OPT_CD_INT_OS_DISK SZ : " + resultVo.getOsLocDskSz());
 			if(resultVo.getOsLocDskSz() > 0 ){
 				svcUseDtl.setTypCd(BillingConstants.TYP_CD_DISK);
@@ -618,9 +618,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 	
 	
 	/**
-	 * <p>data local disk ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>data local disk ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getDataLocalDiskPrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -630,15 +630,15 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		long mmExptPrice =0;
 		try{
 			//int iCnt = 0;
-			//¼¾ÅÍÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
-			//x86OsDiskSz ¼ÂÆÃ
+			//x86OsDiskSz ï¿½ï¿½ï¿½ï¿½
 			log.info(" OPT_CD_INT_DATA_DISK SZ : " + resultVo.getDataLocDskSz());
 			if(resultVo.getDataLocDskSz() > 0 ){
 				svcUseDtl.setTypCd(BillingConstants.TYP_CD_DISK);
@@ -672,9 +672,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 	
 	
 	/**
-	 * <p>//OS DISK(VNX) ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>//OS DISK(VNX) ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getOsDiskPrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -684,15 +684,15 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		long mmExptPrice =0;
 		try{
 			//int iCnt = 0;
-			//¼¾ÅÍÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
-			//OPT_CD_EXT_OS_VNX ¼ÂÆÃ
+			//OPT_CD_EXT_OS_VNX ï¿½ï¿½ï¿½ï¿½
 			log.info(" OPT_CD_EXT_OS_VNX : " + resultVo.getOsDskSz());
 			if(resultVo.getOsDskSz() > 0 ){
 				svcUseDtl.setTypCd(BillingConstants.TYP_CD_DISK);
@@ -723,9 +723,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 	}
 	
 	/**
-	 * <p>//data DISK(VNX) ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>//data DISK(VNX) ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getDataDiskPrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -735,15 +735,15 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		long mmExptPrice =0;
 		try{
 			//int iCnt = 0;
-			//¼¾ÅÍÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
-			//OPT_CD_EXT_OS_VNX ¼ÂÆÃ
+			//OPT_CD_EXT_OS_VNX ï¿½ï¿½ï¿½ï¿½
 			log.info(" OPT_CD_EXT_DATA_VNX : " + resultVo.getDataDskSz());
 			if(resultVo.getDataDskSz() > 0 ){
 				svcUseDtl.setTypCd(BillingConstants.TYP_CD_DISK);
@@ -774,9 +774,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 	}
 	
 	/**
-	 * <p>OsV7000 ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>OsV7000 ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getOsV7000DiskPrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -786,13 +786,13 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		long mmExptPrice =0;
 		
 		try{
-			//¼¾ÅÍÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
 			log.info(" OPT_CD_EXT_OS_V7K : " + resultVo.getOsV7000Sz());
 			if(resultVo.getOsV7000Sz() > 0 ){
@@ -826,9 +826,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 	}
 	
 	/**
-	 * <p>DataV7000 ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>DataV7000 ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getDataV7000DiskPrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -838,13 +838,13 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		long mmExptPrice =0;
 		try{
 			//int iCnt = 0;
-			//¼¾ÅÍÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
 			log.info(" OPT_CD_EXT_DATA_V7K : " + resultVo.getDataV7000Sz());
 			if(resultVo.getDataV7000Sz() > 0 ){
@@ -879,9 +879,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		
 	}
 	/**
-	 * <p>OS VMAX ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>OS VMAX ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getOsVmaxDiskPrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -891,13 +891,13 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		long mmExptPrice =0;
 		try{
 			//int iCnt = 0;
-			//¼¾ÅÍÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
 			log.info(" OPT_CD_EXT_OS_VMAX : " + resultVo.getOsVmaxSz());
 			if(resultVo.getOsVmaxSz() > 0 ){
@@ -932,9 +932,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 	}
 	
 	/**
-	 * <p>data VMAX ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>data VMAX ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getDataVmaxDiskPrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -944,13 +944,13 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		long mmExptPrice =0;
 		try{
 			//int iCnt = 0;
-			//¼¾ÅÍÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
 			log.info(" OPT_CD_EXT_DATA_VMAX : " + resultVo.getDataVmaxSz());
 			if(resultVo.getDataVmaxSz() > 0 ){
@@ -983,9 +983,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 	}
 	
 	/**
-	 * <p>OS Nutanix ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>OS Nutanix ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getNutanixOsDiskPrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -995,13 +995,13 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		long mmExptPrice =0;
 		try{
 			//int iCnt = 0;
-			//¼¾ÅÍÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
 			log.info(" OPT_CD_NTX_OS_DISK : " + resultVo.getNutanixOsDskSz());
 			if(resultVo.getNutanixOsDskSz() > 0 ){
@@ -1035,9 +1035,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 	
 	
 	/**
-	 * <p>Data Nutanix ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>Data Nutanix ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getNutanixDataDiskPrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -1047,13 +1047,13 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		long mmExptPrice =0;
 		try{
 			//int iCnt = 0;
-			//¼¾ÅÍÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
 			log.info(" OPT_CD_NTX_DATA_DISK : " + resultVo.getNutanixDataDskSz());
 			if(resultVo.getNutanixDataDskSz() > 0 ){
@@ -1086,9 +1086,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 	}	
 	
 	/**
-	 * <p>ha service ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>ha service ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getHaPrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -1098,13 +1098,13 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		long mmExptPrice =0;
 		try{
 			//int iCnt = 0;
-			//¼¾ÅÍÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
 			log.info(" OPT_CD_HA_SERVICE : " + resultVo.isHa());
 			if(resultVo.isHa() ){
@@ -1138,9 +1138,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 	//////////////////////////////////////////////////////////////////////////////////
 
 	/**
-	 * <p>DR  OS µð½ºÅ© (EXtreamIO)  ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>DR  OS ï¿½ï¿½Å© (EXtreamIO)  ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getEioDiskPrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -1150,13 +1150,13 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		long mmExptPrice =0;
 		try{
 			//int iCnt = 0;
-			//¼¾ÅÍÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
 			log.info(" OPT_CD_EXT_OS_EIO : " + resultVo.getOsEioSz());
 			if(resultVo.getOsEioSz() > 0 ){
@@ -1190,9 +1190,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 	
 
 	/**
-	 * <p>DR UNIX ¿ë µ¥ÀÌÅÍ µð½ºÅ©(VMAX)   ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>DR UNIX ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©(VMAX)   ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getUnixDiskPrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -1201,13 +1201,13 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		BillChargeSimulationVO resultVo = svcDtl;
 		long mmExptPrice =0;
 		try{
-			//¼¾ÅÍÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
 			
 			log.info(" DR - OPT_CD_EXT_DATA_VMAX : " + resultVo.getUnixDiskSz());
@@ -1241,9 +1241,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 	}
 	
 	/**
-	 * <p>DDR X86¿ë µ¥ÀÌÅÍ µð½ºÅ©(VNX)   ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>DDR X86ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©(VNX)   ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getVcloudDiskPrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -1253,15 +1253,15 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		long mmExptPrice =0;
 		try{
 			//int iCnt = 0;
-			//¼¾ÅÍÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
-			//OPT_CD_EXT_OS_VNX ¼ÂÆÃ
+			//OPT_CD_EXT_OS_VNX ï¿½ï¿½ï¿½ï¿½
 			log.info(" OPT_CD_EXT_DATA_VNX(VCLOUD) : " + resultVo.getvCloudDiskSz());
 			if(resultVo.getvCloudDiskSz() > 0 ){
 				svcUseDtl.setTypCd(BillingConstants.TYP_CD_DISK);
@@ -1292,9 +1292,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 	}
 
 	/**
-	 * <p>°ø¿ë NAS   ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>ï¿½ï¿½ï¿½ NAS   ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getpubNasPrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -1304,15 +1304,15 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		long mmExptPrice =0;
 		
 		try{
-			//¼¾ÅÍÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
-			//¼¾ÅÍ°£ È¸¼± - °ø¿ëNAS
+			//ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ - ï¿½ï¿½ï¿½NAS
 			log.info(" pubNasSz : " + resultVo.getPubNasSz());
 			if(resultVo.getPubNasSz() > 0){
 				svcUseDtl.setTypCd(BillingConstants.TYP_CD_NAS_SHARED);
@@ -1342,9 +1342,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		
 	
 	/**
-	 * <p>RealTime ½Ç½Ã°£º¹Á¦  ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>RealTime ï¿½Ç½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getRealTimePrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -1354,15 +1354,15 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		long mmExptPrice =0;
 		
 		try{
-			//¼¾ÅÍÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
-			//½Ç½Ã°£º¹Á¦¿©ºÎ
+			//ï¿½Ç½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			log.info(" RealTime sz : " + resultVo.getRealTimeSz());
 			if(resultVo.getRealTimeSz() > 0){
 				svcUseDtl.setTypCd(BillingConstants.TYP_CD_DUPLICATE);
@@ -1392,9 +1392,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 	}
 
 	/**
-	 * <p>symantecBackup ¼Ò»ê ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>symantecBackup ï¿½Ò»ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getSymantecBackupPrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -1404,20 +1404,20 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		long mmExptPrice =0;
 		try{
 			//int iCnt = 0;
-			//¼¾ÅÍÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
-			//¼Ò»ê ¹é¾÷¿ë·®
+			//ï¿½Ò»ï¿½ ï¿½ï¿½ï¿½ï¿½ë·®
 			log.info(" SymantecBackupSz : " + resultVo.getSymantecBackupSz());
 			if(resultVo.getSymantecBackupSz() > 0 ){
 				svcUseDtl.setTypCd(BillingConstants.TYP_CD_DUPLICATE);
 				svcUseDtl.setOptCd(BillingConstants.OPT_CD_TOTAL_SIZE);
-				//¼Ò»êÀº ¹é¾÷¿ë·®ÀÇ 3¹úÀ» º¸°üÇÏ¹Ç·Î ¹é¾÷¿ë·®ÀÇ 3¹èÀÇ ¿ë·®ÀÌ °ú±ÝµÇ¾î¾ßÇÔ.
+				//ï¿½Ò»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ë·®ï¿½ï¿½ 3ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¹Ç·ï¿½ ï¿½ï¿½ï¿½ï¿½ë·®ï¿½ï¿½ 3ï¿½ï¿½ï¿½ï¿½ ï¿½ë·®ï¿½ï¿½ ï¿½ï¿½ÝµÇ¾ï¿½ï¿½ï¿½ï¿½.
 				svcUseDtl.setQts(resultVo.getSymantecBackupSz() * 3);
 			}
 			ChargeCalcSimulation simuCalc = new ChargeCalcSimulation(svcUseDtl);
@@ -1445,9 +1445,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 	
 
 	/**
-	 * <p>TcpIp ½Ç½Ã°£ DR ´ë»ó ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>TcpIp ï¿½Ç½Ã°ï¿½ DR ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getTcpIpOsPrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -1458,15 +1458,15 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		
 		try{
 			//int iCnt = 0;
-			//¼¾ÅÍÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
-			 //¼¾ÅÍ°£ È¸¼± - ½Ç½Ã°£ DR- ½Å±Ô»ý¼º
+			 //ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ - ï¿½Ç½Ã°ï¿½ DR- ï¿½Å±Ô»ï¿½
 			log.info(" isTcpIpOs : " + resultVo.isTcpIpOs());
 			if(resultVo.isTcpIpOs()){
 				svcUseDtl.setTypCd(BillingConstants.TYP_CD_DR_CIRCUIT);
@@ -1493,9 +1493,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 	}
 
 	/**
-	 * <p>TCPIP NAS; ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>TCPIP NAS; ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */ 
 	public BillChargeSimulationVO getTcpIpNasPrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -1505,15 +1505,15 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		long mmExptPrice =0;
 		
 		try{
-			//¼¾ÅÍÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
-			//¼¾ÅÍ°£ È¸¼± - °ø¿ëNAS
+			//ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ - ï¿½ï¿½ï¿½NAS
 			log.info(" TcpIpNasSz : " + resultVo.getTcpIpNasSz());
 			if(resultVo.getPubNasSz() > 0){
 				svcUseDtl.setTypCd(BillingConstants.TYP_CD_DR_CIRCUIT);
@@ -1542,9 +1542,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 	}
 	
 	/**
-	 * <p>TcpIp Adg ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>TcpIp Adg ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getTcpIpAdgPrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -1554,15 +1554,15 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		long mmExptPrice =0;
 		
 		try{
-			//¼¾ÅÍÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
-			//¼¾ÅÍ°£ È¸¼±  -exa
+			//ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½  -exa
 			log.info(" TcpIpAdg : " + resultVo.getTcpIpAdgSz());
 			if(resultVo.getTcpIpAdgSz() > 0){
 				svcUseDtl.setTypCd(BillingConstants.TYP_CD_DR_CIRCUIT);
@@ -1591,9 +1591,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 	}
 	
 	/**
-	 * <p>TcpIpArk ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>TcpIpArk ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getTcpIpArkPrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -1603,15 +1603,15 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		long mmExptPrice =0;
 		
 		try{
-			//¼¾ÅÍÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
-			//¼¾ÅÍ°£ È¸¼± 
+			//ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ 
 			log.info(" TcpIpArk : " + resultVo.getTcpIpArkSz());
 			if(resultVo.getTcpIpArkSz() > 0){
 				svcUseDtl.setTypCd(BillingConstants.TYP_CD_DR_CIRCUIT);
@@ -1640,9 +1640,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 	}
 	
 	/**
-	 * <p>TcpIpBackup ¼Ò»ê ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>TcpIpBackup ï¿½Ò»ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getTcpIpBackupPrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -1652,16 +1652,16 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		long mmExptPrice =0;
 		
 		try{
-			//¼¾ÅÍÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
-			//¼¾ÅÍ°£ È¸¼±  -¼Ò»ê¿ë·®À¸·Î ÇÔ 
-			log.info("¼Ò»ê¿ë·®:"+ resultVo.getTcpIpBackupSz());
+			//ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½  -ï¿½Ò»ï¿½ë·®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ 
+			log.info("ï¿½Ò»ï¿½ë·®:"+ resultVo.getTcpIpBackupSz());
 			if(resultVo.getTcpIpBackupSz() > 0){
 				svcUseDtl.setTypCd(BillingConstants.TYP_CD_DR_CIRCUIT);
 				svcUseDtl.setOptCd(BillingConstants.OPT_CD_TCP_IP_BACKUP);
@@ -1688,9 +1688,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 	}
 	
 	/**
-	 * <p>TcpIpFc; ½Ç½Ã°£ º¹Á¦ ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>TcpIpFc; ï¿½Ç½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getTcpIpFcPrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -1700,15 +1700,15 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		long mmExptPrice =0;
 		
 		try{
-			//¼¾ÅÍÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
-			//¼¾ÅÍ°£ È¸¼±  - ½Ç½Ã°£º¹Á¦
+			//ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½  - ï¿½Ç½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½
 			log.info(" TcpIpFc : " + resultVo.getTcpIpFcSz());
 			if(resultVo.getTcpIpFcSz() > 0 ){
 				svcUseDtl.setTypCd(BillingConstants.TYP_CD_DR_CIRCUIT);
@@ -1738,9 +1738,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 	}
 
 	/**
-	 * <p>TcpIp ÀÎÅÍ³Ý ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>TcpIp ï¿½ï¿½ï¿½Í³ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getTcpIpInternetPrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -1751,15 +1751,15 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		
 		try{
 			//int iCnt = 0;
-			//¼¾ÅÍÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
-			 //¼¾ÅÍ°£ È¸¼± - ½Ç½Ã°£ DR- ½Å±Ô»ý¼º
+			 //ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ - ï¿½Ç½Ã°ï¿½ DR- ï¿½Å±Ô»ï¿½
 			log.info(" isTcpIpInternet : " + resultVo.isTcpIpInternet());
 			if(resultVo.isTcpIpInternet()){
 				svcUseDtl.setTypCd(BillingConstants.TYP_CD_DR_CIRCUIT);
@@ -1786,9 +1786,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 	}
 	
 	/**
-	 * <p>NwNework ³×Æ®¿öÅ© ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>NwNework ï¿½ï¿½Æ®ï¿½ï¿½Å© ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getNwNetworkPrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -1798,15 +1798,15 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		long mmExptPrice =0;
 		
 		try{
-			//¼¾ÅÍÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
-			//¼¾ÅÍ°£ È¸¼± -  º¸¾È
+			//ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ -  ï¿½ï¿½ï¿½ï¿½
 			log.info(" isNwSecurity : " + resultVo.isNwSecurity());
 			if(resultVo.isNwSecurity()){
 				svcUseDtl.setTypCd(BillingConstants.TYP_CD_NETWORK_PUBLIC);
@@ -1835,9 +1835,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 	
 	
 	/**
-	 * <p>NwSecurity nwº¸¾È ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>NwSecurity nwï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getNwSecurityPrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -1847,15 +1847,15 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		long mmExptPrice =0;
 		
 		try{
-			//¼¾ÅÍÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
-			//¼¾ÅÍ°£ È¸¼± -  º¸¾È
+			//ï¿½ï¿½ï¿½Í°ï¿½ È¸ï¿½ï¿½ -  ï¿½ï¿½ï¿½ï¿½
 			log.info(" isNwSecurity : " + resultVo.isNwSecurity());
 			if(resultVo.isNwSecurity()){
 				svcUseDtl.setTypCd(BillingConstants.TYP_CD_NETWORK_PUBLIC);
@@ -1885,9 +1885,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 	}
 			
 	/**
-	 * <p>NwSan nw À¯Áö¿î¿µ ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>NwSan nw ï¿½ï¿½ï¿½ï¿½ï¿½î¿µ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getNwSanPrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -1897,15 +1897,15 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		long mmExptPrice =0;
 		
 		try{
-			//¼¾ÅÍÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
 			svcUseDtl.setCntrCd(resultVo.getCntrCd());
-			//°¡»óÈ­ÄÚµå
+			//ï¿½ï¿½ï¿½ï¿½È­ï¿½Úµï¿½
 			svcUseDtl.setVrtlCd(resultVo.getVtrlCd());
-			//OSÄÚµå
+			//OSï¿½Úµï¿½
 			svcUseDtl.setOsCd(resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			svcUseDtl.setAfltCd(resultVo.getAfltCd());
-			//°ø¿ë³×Æ®¿öÅ©/º¸¾È À¯Áö¿î¿µ
+			//ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½Å©/ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½î¿µ
 			log.info(" isNwSan : " + resultVo.isNwSan());
 			if(resultVo.isNwSan()){
 				svcUseDtl.setTypCd(BillingConstants.TYP_CD_NETWORK_PUBLIC);
@@ -1933,9 +1933,9 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 	}
 	
 	/**
-	 * <p>SW¶óÀÌ¼¾½º ¿ù ¿¹»ó±Ý¾× Á¶È¸  
-	 * @param BillChargeSimulationVO: ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª
-	 * @return BillChargeSimulationVO ¿ä±Ý°è»ê±â½ÅÃ»³»¿ª + ¿ù¿¹»ó±Ý¾×+¿¡·¯¸Þ¼¼Áö
+	 * <p>SWï¿½ï¿½ï¿½Ì¼ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½ï¿½È¸  
+	 * @param BillChargeSimulationVO: ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+	 * @return BillChargeSimulationVO ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½Ý¾ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public BillChargeSimulationVO getSwPrice(BillChargeSimulationVO svcDtl)throws Exception{
@@ -1947,13 +1947,13 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		if (swDtl.size() == 0 ){
 			return resultVo;
 		}
-		//type ÄÚµå  ¼ÂÆÃ
+		//type ï¿½Úµï¿½  ï¿½ï¿½ï¿½ï¿½
 		for(int i =0; i<swDtl.size(); i++){
 			log.info(" SOFTWARE OPT_CD : " +swDtl.get(i).getOptCd() );
 			swDtl.get(i).setCntrCd(resultVo.getCntrCd());
 			swDtl.get(i).setVrtlCd(resultVo.getVtrlCd());
 			swDtl.get(i).setOsCd( resultVo.getOsCd());
-			//°ü°è»ç ÄÚµå 
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ 
 			swDtl.get(i).setAfltCd(resultVo.getAfltCd());
 			swDtl.get(i).setTypCd(BillingConstants.TYP_CD_SOFTWARE);
 			swDtl.get(i).setOsCd( resultVo.getOsCd());
@@ -1964,7 +1964,7 @@ public class BillChargeSimulationInterfaceImpl implements BillChargeSimulationIn
 		ChargeCalcSimulationSwLcns simulClsSw = new ChargeCalcSimulationSwLcns(swDtl);
 		simulClsSw.calcOfAllocQts();
 		swDtl = simulClsSw.getActSvcUseDtl();
-		//SWºñ¿ë
+		//SWï¿½ï¿½ï¿½
 		long totSwAmt = 0;
 		for(int i =0; i<swDtl.size(); i++){
 			log.info(swDtl.get(i).getOptCd() + " swAtmt : " + swDtl.get(i).getMmExcptAmt());

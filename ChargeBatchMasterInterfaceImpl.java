@@ -15,16 +15,16 @@ import com.nkia.xeus.util.DateUtil;
 @ManagedResource(objectName = "xeus:name=ChargeBatchMasterInterfaceImpl,type=service")
 @Service("ChargeBatchMasterInterfaceImpl")
 /**
- * <p>°ú±Ý¹èÄ¡ ¸¶½ºÅÍ ±â´É ±¸Çö * 
+ * <p>ï¿½ï¿½Ý¹ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ * 
  */
-public class ChargeBatchMasterInterfaceImpl implements ChargeBatchMasterInterface {
+public class ChargeBatchMasterInterfaceImpl implements ChargeBatchMasterInterface { 
 	//static Logger log = Logger.getLogger(ChargeBatchMasterServiceImpl.class);
 	//static Logger log = Logger.getLogger("charge");
 	NNPLogger log = NNPLogger.getLogger(ChargeBatchMasterInterfaceImpl.class);
 	/**
-	 * <p>±âÁØ °ú±Ý³â¿ùÀ» Á¶È¸ÇÑ´Ù.
-	 * @param ¾øÀ½
-	 * @return String chargeYm : °ú±Ý³â¿ù
+	 * <p>ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ý³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ï¿½Ñ´ï¿½.
+	 * @param ï¿½ï¿½ï¿½ï¿½
+	 * @return String chargeYm : ï¿½ï¿½Ý³ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public String  selectChargeYM() throws Exception{
@@ -33,11 +33,11 @@ public class ChargeBatchMasterInterfaceImpl implements ChargeBatchMasterInterfac
 		//String strTempYYYYMM = "201508";
 		String strChargeYYYYMM= "";
 		
-		//¸Å´Þ 1ÀÏÀÌ¸é Àü¿ù¿¡ ´ëÇÑ °ú±Ý
+		//ï¿½Å´ï¿½ 1ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		if("01".equals(strTempYYYYMM.substring(6))){
 			//DateUtil.getOpDate(java.util.Calendar.DATE , 1, "20080101")
 			strChargeYYYYMM =   (DateUtil.getOpDate(java.util.Calendar.MONTH, -1, strTempYYYYMM)).substring(0,6); 
-		}else{ //´ç¿ù¿¡ ´ëÇÑ °ú±Ý
+		}else{ //ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 			strChargeYYYYMM = strTempYYYYMM.substring(0, 6);
 		}
 		SqlSessionFactory sqlSessionFactory  = null;
@@ -57,7 +57,7 @@ public class ChargeBatchMasterInterfaceImpl implements ChargeBatchMasterInterfac
 	
 		log.debug("lstResult :::"+ lstResult.toString());
 		if(lstResult.size() == 0){
-			//½Å±Ô ¹èÄ¡ ¸¶½ºÅÍ »ý¼º
+			//ï¿½Å±ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 			int iResult = batchMasterDao.insertChargeYm(strChargeYYYYMM);
 			result = strChargeYYYYMM;
 		}else{
@@ -71,7 +71,7 @@ public class ChargeBatchMasterInterfaceImpl implements ChargeBatchMasterInterfac
 	
 	
 	/**
-	 * <p>°ú±Ý¹èÄ¡ÀÛ¾÷ »óÅÂ Ã¼Å©
+	 * <p>ï¿½ï¿½Ý¹ï¿½Ä¡ï¿½Û¾ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¼Å©
 	 * @param String chargeYm
 	 * @return  void
 	 * @throws Exception
@@ -89,10 +89,10 @@ public class ChargeBatchMasterInterfaceImpl implements ChargeBatchMasterInterfac
 		lstResult =  batchMasterDao.selectConfirmAndStat(chargeYm);
 		
 		result = (String)((HashMap)lstResult.get(0)).get("CHRG_STAT");
-		//½ÇÇà»óÅÂ
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		if (BillingConstants.RUN_STAT_RUNNING.equals(result)){
 			bResult = true;	
-		//ÇØ´ç °ú±Ý¿ù¿¡Ã³À½ ½ÇÇàÇÏ´Â °æ¿ì --> 	
+		//ï¿½Ø´ï¿½ ï¿½ï¿½Ý¿ï¿½Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ --> 	
 		} else if (BillingConstants.RUN_STAT_NOT_RUNNING.equals(result)){
 			batchMasterDao.insertChargeYm(chargeYm);
 		}
@@ -102,7 +102,7 @@ public class ChargeBatchMasterInterfaceImpl implements ChargeBatchMasterInterfac
 	
 	
 	/**
-	 * <p>°ú±Ý°è»êÀ» ÃÊ±âÈ­ ÇÑ´Ù.(ÀüÀÏ °ú±Ý³»¿ªÀ» »èÁ¦ Ã³¸®ÇÕ´Ï´Ù.)
+	 * <p>ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­ ï¿½Ñ´ï¿½.(ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ý³ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½Õ´Ï´ï¿½.)
 	 * @param String chargeYm
 	 * @return  void
 	 * @throws Exception
@@ -117,70 +117,70 @@ public class ChargeBatchMasterInterfaceImpl implements ChargeBatchMasterInterfac
 		String result = "";
 		log.debug("chargeYm :::"+ chargeYm);
 		
-		//°ú±Ý¸¶½ºÅÍ ½ÇÇà»óÅÂ Ã¼Å© 
+		//ï¿½ï¿½Ý¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¼Å© 
 		
 		/*
-		String DEL_TBL_ACT_CHRG_SVR  = "ACT_CHRG_SVR"; //°ú±Ý´ë»ó¼­¹ö
-		String DEL_TBL_ACT_SVC_USE_DTL  = "ACT_SVC_USE_DTL"; //¼­ºñ½º»ç¿ë³»¿ª
-		String DEL_TBL_ACT_SW_USE_DTL  = "ACT_SW_USE_DTL"; //SW »ç¿ë³»¿ª
-		//String DEL_TBL_BILL_CHRG_MSTR  = "BILL_CHRG_MSTR"; //°ú±Ý¿øÀå
-		String DEL_TBL_BILL_SW_DTL  = "BILL_SW_DTL"; // °ú±Ý¿øÀåSW³»¿ª
-		String DEL_TBL_BILL_COMM_BIZ_CHRG_DTL = "BILL_COMM_BIZ_CHRG_DTL"; //°øÅë¾÷¹« °ú±Ý³»¿ª
+		String DEL_TBL_ACT_CHRG_SVR  = "ACT_CHRG_SVR"; //ï¿½ï¿½Ý´ï¿½ó¼­¹ï¿½
+		String DEL_TBL_ACT_SVC_USE_DTL  = "ACT_SVC_USE_DTL"; //ï¿½ï¿½ï¿½ñ½º»ï¿½ë³»ï¿½ï¿½
+		String DEL_TBL_ACT_SW_USE_DTL  = "ACT_SW_USE_DTL"; //SW ï¿½ï¿½ë³»ï¿½ï¿½
+		//String DEL_TBL_BILL_CHRG_MSTR  = "BILL_CHRG_MSTR"; //ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½
+		String DEL_TBL_BILL_SW_DTL  = "BILL_SW_DTL"; // ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½SWï¿½ï¿½ï¿½ï¿½
+		String DEL_TBL_BILL_COMM_BIZ_CHRG_DTL = "BILL_COMM_BIZ_CHRG_DTL"; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ý³ï¿½ï¿½ï¿½
 		
-		String DEL_TBL_BILL_COMM_BIZ_DSTRBT = "BILL_COMM_BIZ_DSTRBT"; //°øÅë¾÷¹«¹èºÐ³»¿ª
-		String DEL_TBL_BILL_COMM_BIZ_DSTRBT_SMRY = "BILL_COMM_BIZ_DSTRBT_SMRY"; //°øÅë¾÷¹« °ú±Ý³»¿ªÁý°è
-		// °ü°è»ç´ÜÀ§ °ú±Ý³»¿ª 
-		String DEL_TBL_ACT_AFLT_SVC_USE_DTL  = "ACT_AFLT_SVC_USE_DTL"; //°ü°è»ç´ÜÀ§ÀÇ ¼­ºñ½º »ç¿ë³»¿ª//String DEL_TBL_BILL_BILL_MSTR = "BILL_BILL_MSTR"; //Ã»±¸¿øÀå
-		//°ü°è»ç°ú±Ý¿øÀå
+		String DEL_TBL_BILL_COMM_BIZ_DSTRBT = "BILL_COMM_BIZ_DSTRBT"; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð³ï¿½ï¿½ï¿½
+		String DEL_TBL_BILL_COMM_BIZ_DSTRBT_SMRY = "BILL_COMM_BIZ_DSTRBT_SMRY"; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ý³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ý³ï¿½ï¿½ï¿½ 
+		String DEL_TBL_ACT_AFLT_SVC_USE_DTL  = "ACT_AFLT_SVC_USE_DTL"; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ë³»ï¿½ï¿½//String DEL_TBL_BILL_BILL_MSTR = "BILL_BILL_MSTR"; //Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		//ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½
 		*/
 		
 		
 		List<String> delTable = new ArrayList<String>();
-		//VM´ÜÀ§°ú±Ýµ¥ÀÌÅÍ
+		//VMï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½ï¿½ï¿½ï¿½ï¿½
 		delTable.add(BillingConstants.DEL_TBL_ACT_CHRG_SVR);
 		delTable.add(BillingConstants.DEL_TBL_ACT_SVC_USE_DTL);
 		delTable.add(BillingConstants.DEL_TBL_ACT_SW_USE_DTL);
 		delTable.add(BillingConstants.DEL_TBL_BILL_CHRG_MSTR);
 		delTable.add(BillingConstants.DEL_TBL_BILL_SW_DTL);
-		//»ç¿ë·®±â¹Ý µ¥ÀÌÅÍ --ÀÓ½Ã
+		//ï¿½ï¿½ë·®ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ --ï¿½Ó½ï¿½
 		delTable.add(BillingConstants.DEL_TBL_ACT_USEVAL_BASED_CHRG_DTL);
 		//delTable.add(BillingConstants.DEL_TBL_ACT_USEVAL_BASED_USE_DTL);
 		
 		
-		//°ü°è»ç´ÜÀ§°ú±Ýµ¥ÀÌÅÍ
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½ï¿½ï¿½ï¿½ï¿½
 		delTable.add(BillingConstants.DEL_TBL_ACT_AFLT_VAN_SVC_USE_DTL);
 		delTable.add(BillingConstants.DEL_TBL_ACT_AFLT_SVC_USE_DTL);
 		delTable.add(BillingConstants.DEL_TBL_BILL_AFLT_CHRG_MSTR);
 		
-		//°ü°è»ç´ÜÀ§NAS °ú±Ýµ¥ÀÌÅÍ 
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½NAS ï¿½ï¿½Ýµï¿½ï¿½ï¿½ï¿½ï¿½ 
 		delTable.add(BillingConstants.DEL_TBL_ACT_AFLT_NAS_USE_DTL);
 		delTable.add(BillingConstants.DEL_TBL_ACT_CHRG_AFLT_NAS);
 		delTable.add(BillingConstants.DEL_TBL_BILL_AFLT_NAS_MSTR);
-		//°øÅë¹èºÐ
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		delTable.add(BillingConstants.DEL_TBL_BILL_COMM_BIZ_DSTRBT);
 		delTable.add(BillingConstants.DEL_TBL_BILL_COMM_BIZ_DSTRBT_SMRY);
 		delTable.add(BillingConstants.DEL_TBL_BILL_COMM_BIZ_CHRG_DTL);
 		
 		//delTable.add(BillingConstants.DEL_TBL_BILL_SYS_CHRG_SMRY);
-		//Ã»±¸¿øÀå - ÅëÇÕÀÎÇÁ¶ó
+		//Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		delTable.add(BillingConstants.DEL_TBL_BILL_BILL_MSTR);
-		//Ã»±¸¿øÀå - DR
+		//Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ - DR
 		delTable.add(BillingConstants.DEL_TBL_BILL_DR_BILL_MSTR);
-		//°ü°è»çº°Ã»±¸¿øÀå
+		//ï¿½ï¿½ï¿½çº°Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		delTable.add(BillingConstants.DEL_TBL_BILL_AFLT_BILL_MSTR);
 		
-		//¹éÈ­Á¡¹èºÐ
+		//ï¿½ï¿½È­ï¿½ï¿½ï¿½ï¿½ï¿½
 		delTable.add(BillingConstants.DEL_TBL_BILL_DEPTSTORE_DSTRBT_MSTR);
 		delTable.add(BillingConstants.DEL_TBL_BILL_DEPTSTORE_DSTRBT_DTL);
 		
 		
 		
-		//ÇâÈÄ Ãß°¡
+		//ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
 		try{
 			iResult =  batchMasterDao.deleteChargeData(chargeYm, delTable);
 			log.info("iResult:"+iResult);
 			
-			//»ç¿ë·®±â¹Ý µ¥ÀÌÅÍ »èÁ¦Ã³¸®(DEL_TBL_ACT_USEVAL_BASED_USE_DTL)
+			//ï¿½ï¿½ë·®ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½(DEL_TBL_ACT_USEVAL_BASED_USE_DTL)
 			ChargeSvcUseDtlInterface svcUseDtl = new ChargeSvcUseDtlInterfaceImpl();
 			svcUseDtl.deleteUseValBaseChrgDtl(chargeYm);
 			
@@ -196,9 +196,9 @@ public class ChargeBatchMasterInterfaceImpl implements ChargeBatchMasterInterfac
 		log.info("ChargeBatchMasterInterfaceImpl.initializeChargeCalc end ########################################");
 	}
 	/**
-	 * <p>°ú±Ý°è»êÀÏÀÚ°¡ 1ÀÏÀÌ¸é ´ç¿ù±âÁØ°ú±Ý³â¿ùÀ» »ý¼ºÇÑ´Ù.
-	 * @param ¾øÀ½
-	 * @return String chargeYm : °ú±Ý³â¿ù
+	 * <p>ï¿½ï¿½Ý°ï¿½ï¿½ï¿½ï¿½ï¿½Ú°ï¿½ 1ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø°ï¿½Ý³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ñ´ï¿½.
+	 * @param ï¿½ï¿½ï¿½ï¿½
+	 * @return String chargeYm : ï¿½ï¿½Ý³ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public void insertChargeYM(String chargeYm) throws Exception{
@@ -213,16 +213,16 @@ public class ChargeBatchMasterInterfaceImpl implements ChargeBatchMasterInterfac
 		
 		iResult =  batchMasterDao.insertChargeYm(chargeYm);
 		if (iResult == -1) {
-			throw new Exception ("°ú±Ý¹èÄ¡¸¶½ºÅÍ µî·ÏÀ» ½ÇÆÐÇß½À´Ï´Ù. È®ÀÎ ¹Ù¶ø´Ï´Ù.!!");
+			throw new Exception ("ï¿½ï¿½Ý¹ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½. È®ï¿½ï¿½ ï¿½Ù¶ï¿½Ï´ï¿½.!!");
 		}
 		
 		log.debug("iResult :::"+ result.toString());
 		log.info("ChargeBatchMasterInterfaceImpl.insertChargeYM end ########################################");
 	}
 	/**
-	 * <p>°ú±Ý°è»ê ¹èÄ¡ÀÛ¾÷»óÅÂ¸¦ RUNNINGÀ¸·Î UPDATEÃ³¸®ÇÑ´Ù.
-	 * @param ¾øÀ½
-	 * @return String chargeYm : °ú±Ý³â¿ù
+	 * <p>ï¿½ï¿½Ý°ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½Û¾ï¿½ï¿½ï¿½ï¿½Â¸ï¿½ RUNNINGï¿½ï¿½ï¿½ï¿½ UPDATEÃ³ï¿½ï¿½ï¿½Ñ´ï¿½.
+	 * @param ï¿½ï¿½ï¿½ï¿½
+	 * @return String chargeYm : ï¿½ï¿½Ý³ï¿½ï¿½
 	 * @throws Exception
 	 */
 	public void updateChrgBatchStart(String chargeYm) throws Exception{
@@ -237,17 +237,17 @@ public class ChargeBatchMasterInterfaceImpl implements ChargeBatchMasterInterfac
 		
 		iResult =  batchMasterDao.updateChargeBatchStart(chargeYm, BillingConstants.RUN_STAT_RUNNING);
 		if (iResult == -1) {
-			throw new Exception ("°ú±Ý¹èÄ¡¸¶½ºÅÍ  ¹èÄ¡½ÃÀÛ½Ã°£ µî·ÏÀ» ½ÇÆÐÇß½À´Ï´Ù. È®ÀÎ ¹Ù¶ø´Ï´Ù.!!");
+			throw new Exception ("ï¿½ï¿½Ý¹ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½Û½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½. È®ï¿½ï¿½ ï¿½Ù¶ï¿½Ï´ï¿½.!!");
 		}
 		
 		log.debug("iResult :::"+ result.toString());
 		log.info("ChargeBatchMasterInterfaceImpl.updateChrgBatchStart end ########################################");
 	}
 	/**
-	 * <p>°ú±Ý°è»ê ¹èÄ¡ÀÛ¾÷»óÅÂ¸¦ Á¾·áÃ³¸®ÇÑ´Ù.
-	 * @param String chargeYm : °ú±Ý³â¿ù
-	 * @return String chargeYm : °ú±Ý³â¿ù
-	 * @param  String batchStat : ¹èÄ¡ÀÛ¾÷»óÅÂ RUN_STAT_COMPLETE/RUN_STAT_ERROR
+	 * <p>ï¿½ï¿½Ý°ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½Û¾ï¿½ï¿½ï¿½ï¿½Â¸ï¿½ ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ï¿½Ñ´ï¿½.
+	 * @param String chargeYm : ï¿½ï¿½Ý³ï¿½ï¿½
+	 * @return String chargeYm : ï¿½ï¿½Ý³ï¿½ï¿½
+	 * @param  String batchStat : ï¿½ï¿½Ä¡ï¿½Û¾ï¿½ï¿½ï¿½ï¿½ï¿½ RUN_STAT_COMPLETE/RUN_STAT_ERROR
 	 * @throws Exception
 	 */
 	public void updateChrgBatchEnd(String chargeYm, String batchStat) throws Exception{
@@ -262,7 +262,7 @@ public class ChargeBatchMasterInterfaceImpl implements ChargeBatchMasterInterfac
 		log.debug("batchStat :::"+ batchStat);
 		iResult =  batchMasterDao.updateChargeBatchEnd(chargeYm, batchStat);
 		if (iResult == -1) {
-			throw new Exception ("°ú±Ý¹èÄ¡¸¶½ºÅÍ  ¹èÄ¡Á¾·á½Ã°£ µî·ÏÀ» ½ÇÆÐÇß½À´Ï´Ù. È®ÀÎ ¹Ù¶ø´Ï´Ù.!!");
+			throw new Exception ("ï¿½ï¿½Ý¹ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½. È®ï¿½ï¿½ ï¿½Ù¶ï¿½Ï´ï¿½.!!");
 		}
 		
 		log.debug("iResult :::"+ result.toString());
@@ -270,8 +270,8 @@ public class ChargeBatchMasterInterfaceImpl implements ChargeBatchMasterInterfac
 	}
 	
 	/**
-	 * <p>ÇØ´ç¿ùÀÇ °ú±ÝÀÌ ¸¶°¨¿©ºÎ¸¦ Á¶È¸ÇÑ´Ù.
-	 * @param String chargeYm : °ú±Ý³â¿ù
+	 * <p>ï¿½Ø´ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¸ï¿½ ï¿½ï¿½È¸ï¿½Ñ´ï¿½.
+	 * @param String chargeYm : ï¿½ï¿½Ý³ï¿½ï¿½
 	 * @return Y/N 
 	 * @throws Exception
 	 */
